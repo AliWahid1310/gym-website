@@ -47,27 +47,27 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="flex items-center h-16 transition-transform duration-300 hover:scale-105"
+          className="flex items-center shrink-0 transition-transform duration-300 hover:scale-105"
           aria-label="Power Fitness Zone — Home"
         >
           <Image
             src="/images/logo.png"
             alt="Power Fitness Zone logo"
-            width={160}
-            height={64}
-            className="h-14 w-auto object-contain"
-            style={{ width: "auto", height: "auto" }}
+            width={150}
+            height={60}
+            className="object-contain"
+            style={{ height: "60px", width: "auto" }}
             priority
           />
         </a>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-white/70 hover:text-white text-[13px] font-medium uppercase tracking-widest transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full"
+              className="text-white/70 hover:text-white text-[12px] xl:text-[13px] font-medium uppercase tracking-widest transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block ml-4 shrink-0">
           <Button variant="primary" size="sm" href="#contact">
             Free Trial
           </Button>
