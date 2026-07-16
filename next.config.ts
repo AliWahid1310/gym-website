@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    // Enable unoptimized for placeholder SVG images during development.
+    // Remove this when real photos are added.
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

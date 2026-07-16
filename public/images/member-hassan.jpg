@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect fill="#333" width="200" height="200"/>
+  <rect fill="#D91E2A" x="0" y="196" width="200" height="4" opacity="0.6"/>
+  <text fill="#666" font-family="Arial,sans-serif" font-size="16" font-weight="bold" text-anchor="middle" x="100" y="90">HM</text>
+  <text fill="#444" font-family="Arial,sans-serif" font-size="12" text-anchor="middle" x="100" y="120">200 × 200</text>
+</svg>
