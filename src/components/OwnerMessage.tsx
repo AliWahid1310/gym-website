@@ -89,10 +89,10 @@ export default function OwnerMessage() {
               <div>
                 {/* Signature placeholder — replace with SVG signature */}
                 <span className="text-2xl text-white italic font-body" style={{ fontFamily: "Georgia, serif" }}>
-                  Rashid Mahmood
+                  Qaim
                 </span>
                 <span className="block text-white/40 text-xs font-body uppercase tracking-widest mt-1">
-                  Founder & CEO, Power Fitness Zone
+                  Founder &amp; CEO, Power Fitness Zone
                 </span>
               </div>
             </div>

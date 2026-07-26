@@ -12,10 +12,14 @@ import OwnerMessage from "@/components/OwnerMessage";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
+import BranchModal from "@/components/BranchModal";
 
 export default function Home() {
   return (
     <>
+      {/* Branch selection modal — shown once per session */}
+      <BranchModal />
+
       <Navbar />
 
       <main id="main-content">
