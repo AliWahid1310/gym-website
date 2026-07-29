@@ -58,7 +58,7 @@ export default function Programs() {
               >
                 <Image
                   src={program.image}
-                  alt={`${program.name} program at Power Fitness Zone`}
+                  alt={`${program.name} program at 360 Fitness`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes={i === 0 ? "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}

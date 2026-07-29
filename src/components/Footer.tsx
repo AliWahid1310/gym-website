@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const quickLinks = [
@@ -79,14 +78,14 @@ export default function Footer() {
           {/* Col 1: About + Social */}
           <div>
             <div className="flex items-center mb-6">
-              <Image
-                src="/images/logo.png"
-                alt="Power Fitness Zone logo"
-                width={120}
-                height={48}
-                className="h-12 w-auto object-contain"
-                style={{ width: "auto", height: "auto" }}
-              />
+              <a
+                href="#"
+                className="flex items-center gap-2 font-display text-2xl font-black tracking-tight"
+                aria-label="360 Fitness — Home"
+              >
+                <span className="bg-brand-red text-white px-2 py-0.5 transform -skew-x-12 inline-block font-bold">360</span>
+                <span className="text-white tracking-widest text-xl">FITNESS</span>
+              </a>
             </div>
             <p className="text-white/40 text-sm font-body leading-relaxed mb-6">
               Premium gym and training facility. Where discipline meets
@@ -198,7 +197,7 @@ export default function Footer() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Power Fitness Zone location on Google Maps"
+              title="360 Fitness location on Google Maps"
             />
             {/* Red overlay accent */}
             <div className="absolute top-0 left-0 w-1 h-full bg-brand-red" aria-hidden="true" />
@@ -208,7 +207,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs font-body">
-            © {new Date().getFullYear()} Power Fitness Zone. All rights
+            © {new Date().getFullYear()} 360 Fitness. All rights
             reserved.
           </p>
           <div className="flex gap-6">

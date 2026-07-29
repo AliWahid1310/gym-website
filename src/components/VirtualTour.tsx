@@ -24,7 +24,7 @@ export default function VirtualTour() {
           <>
             <Image
               src="/images/gym-interior-wide.jpg"
-              alt="Interior view of Power Fitness Zone — modern equipment and spacious training floor"
+              alt="Interior view of 360 Fitness — modern equipment and spacious training floor"
               fill
               className="object-cover"
               sizes="100vw"

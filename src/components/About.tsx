@@ -96,7 +96,7 @@ export default function About() {
             </h2>
 
             <p className="text-white/60 text-lg leading-relaxed font-body font-light mb-8">
-              Power Fitness Zone was built on a single belief: that the right
+              360 Fitness was built on a single belief: that the right
               environment changes everything. We&apos;re not a place where you
               go through the motions. We&apos;re a place where you come to be
               challenged, coached, and transformed — by trainers who know

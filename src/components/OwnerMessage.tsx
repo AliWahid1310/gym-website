@@ -38,7 +38,7 @@ export default function OwnerMessage() {
               <div className="relative aspect-[4/5] overflow-hidden bg-brand-gray">
                 <Image
                   src="/images/owner-portrait.jpg"
-                  alt="Founder and owner of Power Fitness Zone"
+                  alt="Founder and owner of 360 Fitness"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 40vw, 100vw"
@@ -70,7 +70,7 @@ export default function OwnerMessage() {
 
             <blockquote className="relative">
               <p className="text-white/70 text-lg sm:text-xl leading-relaxed font-body font-light mb-6">
-                &ldquo;I started Power Fitness Zone because I was tired of
+                &ldquo;I started 360 Fitness because I was tired of
                 gyms that treated members like numbers. I wanted to build a
                 place where a first-timer gets the same respect and attention
                 as someone deadlifting 200kg. A place where trainers are
@@ -92,7 +92,7 @@ export default function OwnerMessage() {
                   Qaim
                 </span>
                 <span className="block text-white/40 text-xs font-body uppercase tracking-widest mt-1">
-                  Founder &amp; CEO, Power Fitness Zone
+                  Founder &amp; CEO, 360 Fitness
                 </span>
               </div>
             </div>

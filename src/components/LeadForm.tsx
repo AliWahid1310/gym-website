@@ -97,7 +97,7 @@ export default function LeadForm() {
 
             <p className="text-white/70 text-lg font-body font-light leading-relaxed mb-8 max-w-md">
               No commitment. No pressure. Just one session to see why 500+
-              members call Power Fitness Zone home. Fill out the form and
+              members call 360 Fitness home. Fill out the form and
               we&apos;ll get you booked within 24 hours.
             </p>
 
@@ -278,7 +278,7 @@ export default function LeadForm() {
 
                 <p className="text-white/30 text-[11px] font-body text-center mt-4">
                   By submitting, you agree to receive communications from
-                  Power Fitness Zone. We respect your privacy.
+                  360 Fitness. We respect your privacy.
                 </p>
               </form>
             )}

@@ -65,7 +65,7 @@ export default function Trainers() {
               <div className="relative overflow-hidden aspect-[3/4] mb-5 bg-brand-gray">
                 <Image
                   src={trainer.image}
-                  alt={`${trainer.name} — ${trainer.specialty} trainer at Power Fitness Zone`}
+                  alt={`${trainer.name} — ${trainer.specialty} trainer at 360 Fitness`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

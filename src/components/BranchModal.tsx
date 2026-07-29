@@ -90,7 +90,7 @@ export default function BranchModal() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[2px] bg-brand-red" />
                 <span className="text-brand-red text-[10px] font-semibold uppercase tracking-[0.3em] font-body">
-                  Power Fitness Zone
+                  360 Fitness
                 </span>
               </div>
 
@@ -103,7 +103,7 @@ export default function BranchModal() {
                 <span className="text-brand-red">Branch</span>
               </h2>
               <p className="text-white/50 text-sm font-body leading-relaxed">
-                Choose the Power Fitness Zone location closest to you. You can
+                Choose the 360 Fitness location closest to you. You can
                 change this anytime.
               </p>
             </div>

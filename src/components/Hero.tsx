@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-training-floor.jpg"
-          alt="Athletes training on the Power Fitness Zone gym floor with professional equipment"
+          alt="Athletes training on the 360 Fitness gym floor with professional equipment"
           fill
           className="object-cover object-center"
           priority

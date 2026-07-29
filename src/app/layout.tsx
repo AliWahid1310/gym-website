@@ -18,9 +18,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://powerfitzone.com"),
-  title: "Power Fitness Zone — Premium Gym & Training Facility",
+  title: "360 Fitness — Premium Gym & Training Facility",
   description:
-    "Transform your body and mindset at Power Fitness Zone. Expert trainers, world-class equipment, and a community that pushes you to be your best. Claim your free trial class today.",
+    "Transform your body and mindset at 360 Fitness. Expert trainers, world-class equipment, and a community that pushes you to be your best. Claim your free trial class today.",
   keywords: [
     "gym",
     "fitness",
@@ -28,29 +28,29 @@ export const metadata: Metadata = {
     "boxing",
     "HIIT",
     "strength training",
-    "Power Fitness Zone",
+    "360 Fitness",
   ],
   openGraph: {
-    title: "Power Fitness Zone — Premium Gym & Training Facility",
+    title: "360 Fitness — Premium Gym & Training Facility",
     description:
-      "Transform your body and mindset at Power Fitness Zone. Expert trainers, world-class equipment, and a community that pushes you to be your best.",
+      "Transform your body and mindset at 360 Fitness. Expert trainers, world-class equipment, and a community that pushes you to be your best.",
     type: "website",
     locale: "en_US",
-    siteName: "Power Fitness Zone",
+    siteName: "360 Fitness",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Power Fitness Zone — Train Like It Matters",
+        alt: "360 Fitness — Train Like It Matters",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Power Fitness Zone — Premium Gym & Training Facility",
+    title: "360 Fitness — Premium Gym & Training Facility",
     description:
-      "Transform your body and mindset at Power Fitness Zone. Claim your free trial class today.",
+      "Transform your body and mindset at 360 Fitness. Claim your free trial class today.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -74,7 +74,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "@id": "https://powerfitzone.com",
-              name: "Power Fitness Zone",
+              name: "360 Fitness",
               description:
                 "Premium gym and training facility with expert trainers, world-class equipment, and results-driven programs.",
               image: "/images/og-image.jpg",

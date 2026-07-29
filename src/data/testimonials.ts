@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
     memberSince: "Member since 2021",
     rating: 5,
     quote:
-      "I've trained at six gyms in this city. Power Fitness Zone is the first one where I actually look forward to showing up every single day. The trainers don't just count your reps — they genuinely invest in your progress.",
+      "I've trained at six gyms in this city. 360 Fitness is the first one where I actually look forward to showing up every single day. The trainers don't just count your reps — they genuinely invest in your progress.",
   },
   {
     id: "t2",
@@ -51,7 +51,7 @@ export const testimonials: Testimonial[] = [
     memberSince: "Member since 2019",
     rating: 5,
     quote:
-      "I've been training here since they opened. What sets Power Fitness Zone apart is the community — everyone pushes each other. The owner knows every member by name. You won't find that anywhere else.",
+      "I've been training here since they opened. What sets 360 Fitness apart is the community — everyone pushes each other. The owner knows every member by name. You won't find that anywhere else.",
   },
 ];
 

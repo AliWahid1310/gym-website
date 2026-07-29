@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
@@ -47,18 +46,11 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="flex items-center shrink-0 transition-transform duration-300 hover:scale-105"
-          aria-label="Power Fitness Zone — Home"
+          className="flex items-center gap-2 shrink-0 transition-transform duration-300 hover:scale-105 font-display text-2xl md:text-3xl font-black tracking-tight"
+          aria-label="360 Fitness — Home"
         >
-          <Image
-            src="/images/logo.png"
-            alt="Power Fitness Zone logo"
-            width={150}
-            height={60}
-            className="object-contain"
-            style={{ height: "60px", width: "auto" }}
-            priority
-          />
+          <span className="bg-brand-red text-white px-2 py-0.5 transform -skew-x-12 inline-block font-bold">360</span>
+          <span className="text-white tracking-widest">FITNESS</span>
         </a>
 
         {/* Desktop Nav Links */}
