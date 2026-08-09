@@ -16,11 +16,35 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Track which section is currently in view
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        },
+        { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   useEffect(() => {
@@ -55,15 +79,23 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-5 xl:gap-7">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-white/70 hover:text-white text-[12px] xl:text-[13px] font-medium uppercase tracking-widest transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const sectionId = link.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`text-[12px] xl:text-[13px] font-medium uppercase tracking-widest transition-all duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 whitespace-nowrap ${
+                  isActive
+                    ? "text-white after:w-full"
+                    : "text-white/70 hover:text-white after:w-0 hover:after:w-full"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
 
         {/* Desktop CTA */}
@@ -107,23 +139,29 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-6 -mt-20">
-          {navLinks.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-white text-2xl font-display font-bold uppercase tracking-wider hover:text-brand-red transition-all duration-300"
-              style={{
-                transitionDelay: mobileOpen ? `${i * 60}ms` : "0ms",
-                opacity: mobileOpen ? 1 : 0,
-                transform: mobileOpen
-                  ? "translateY(0)"
-                  : "translateY(16px)",
-              }}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link, i) => {
+            const sectionId = link.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className={`text-2xl font-display font-bold uppercase tracking-wider transition-all duration-300 ${
+                  isActive ? "text-brand-red" : "text-white hover:text-brand-red"
+                }`}
+                style={{
+                  transitionDelay: mobileOpen ? `${i * 60}ms` : "0ms",
+                  opacity: mobileOpen ? 1 : 0,
+                  transform: mobileOpen
+                    ? "translateY(0)"
+                    : "translateY(16px)",
+                }}
+              >
+                {link.label}
+              </a>
+            );
+          })}
           <div
             className="mt-4"
             style={{

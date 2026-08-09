@@ -85,7 +85,7 @@ export default function Pricing() {
               key={tier.id}
               className={`relative flex flex-col border transition-all duration-700 ${
                 tier.highlighted
-                  ? "bg-brand-black text-white border-brand-red md:scale-105 md:z-10 md:-my-4 shadow-2xl shadow-brand-red/10"
+                  ? "animate-gradient-shift text-white border-brand-red md:scale-105 md:z-10 md:-my-4 shadow-2xl shadow-brand-red/10"
                   : "bg-white text-brand-black border-black/10 hover:border-black/20"
               } ${
                 isVisible
@@ -98,7 +98,7 @@ export default function Pricing() {
             >
               {/* Badge */}
               {tier.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-red text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2 font-body z-10">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-red text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2 font-body z-10 animate-pulse-glow">
                   {tier.badge}
                 </div>
               )}

@@ -13,6 +13,7 @@ import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import BranchModal from "@/components/BranchModal";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -80,6 +81,9 @@ export default function Home() {
 
       {/* Mobile Sticky CTA */}
       <MobileCTA />
+
+      {/* Back To Top Button */}
+      <BackToTop />
     </>
   );
 }
