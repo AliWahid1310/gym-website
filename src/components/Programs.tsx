@@ -38,7 +38,7 @@ export default function Programs() {
           {programs.map((program, i) => (
             <div
               key={program.id}
-              className={`group relative overflow-hidden cursor-pointer bg-brand-dark transition-all duration-700 shadow-md hover:shadow-2xl hover:shadow-brand-red/10 ${
+              className={`group relative overflow-hidden cursor-pointer bg-brand-dark transition-all duration-700 shadow-md hover:shadow-2xl hover:shadow-brand-red/10 premium-card-glow ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
