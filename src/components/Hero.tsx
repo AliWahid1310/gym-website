@@ -5,8 +5,8 @@ import Button from "@/components/ui/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
-  { value: "500+", label: "Members" },
-  { value: "15+", label: "Expert Trainers" },
+  { value: "600+", label: "Active Members" },
+  { value: "20+", label: "Expert Trainers" },
   { value: "4.9★", label: "Google Rating" },
 ];
 
@@ -86,7 +86,8 @@ export default function Hero() {
             style={{ transitionDelay: "300ms" }}
           >
             Where discipline meets community — a results-driven facility
-            built for those who refuse to settle.
+            built for those who refuse to settle. Your strongest chapter
+            starts here.
           </p>
 
           {/* CTAs */}
