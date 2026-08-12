@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💪 Power Fitness Zone — 360 Fitness
 
-## Getting Started
+A modern, high-performance gym landing page built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**. Designed to convert visitors into members with a premium dark-themed UI, smooth animations, and rich content sections.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- **Hero Section** — Full-screen training image with animated stats and CTAs
+- **Programs Section** — Interactive program cards with HIIT, Strength, Boxing & more
+- **Schedule** — Weekly class timetable with real-time filter
+- **Trainers** — Profiles of 7 expert trainers with certifications
+- **Pricing** — Starter, Pro & Elite membership tiers
+- **Testimonials** — Real member reviews with star ratings
+- **Lead Form** — Multi-step inquiry form with branch selection
+- **Virtual Tour** — Embedded gallery/tour of the facility
+- **Owner's Message** — Personal note from the gym owner
+- **Back to Top** — Smooth scroll button with progress indicator
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer       | Technology                        |
+|-------------|-----------------------------------|
+| Framework   | Next.js 15 (App Router)           |
+| Language    | TypeScript                        |
+| Styling     | Tailwind CSS + Custom CSS         |
+| Fonts       | Google Fonts (Bebas Neue, Inter)  |
+| Images      | Next.js Image Optimization        |
+| Animations  | CSS Keyframes + Intersection Observer |
+
+---
+
+## 📦 Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+src/
+├── app/              # Next.js App Router pages & layout
+├── components/       # UI components (Hero, Navbar, Pricing, etc.)
+│   └── ui/           # Reusable base components (Button, etc.)
+├── data/             # Static content (trainers, pricing, testimonials)
+└── hooks/            # Custom React hooks (useScrollReveal, etc.)
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deploy instantly on **Vercel**:
 
-## Deploy on Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or build for production:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 📄 License
+
+This project is proprietary. All rights reserved © 2026 Power Fitness Zone / 360 Fitness.
