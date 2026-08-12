@@ -56,4 +56,12 @@ export const trainers: Trainer[] = [
     image: "/images/trainer-zara.jpg",
     certifications: ["ISSA-CPT", "Precision Nutrition L2"],
   },
+  {
+    id: "kamran",
+    name: "Kamran Siddiqui",
+    specialty: "Sports Nutrition & Body Recomposition",
+    bio: "Registered dietitian and certified sports nutritionist with 8 years of experience. Has helped over 300 clients achieve their body composition goals through data-driven nutrition strategies.",
+    image: "/images/trainer-kamran.jpg",
+    certifications: ["RD", "ISSN-SNS", "Precision Nutrition L2"],
+  },
 ];
