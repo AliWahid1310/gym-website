@@ -53,10 +53,19 @@ export const testimonials: Testimonial[] = [
     quote:
       "I've been training here since they opened. What sets 360 Fitness apart is the community — everyone pushes each other. The owner knows every member by name. You won't find that anywhere else.",
   },
+  {
+    id: "t6",
+    name: "Rana Imran",
+    image: "/images/member-rana.jpg",
+    memberSince: "Member since 2024",
+    rating: 5,
+    quote:
+      "I was skeptical at first but decided to try the free trial class. That one class changed everything. Four months in, I've dropped 12kg and hit a personal best on deadlifts. The programming here is seriously next level.",
+  },
 ];
 
 export const aggregateRating = {
   score: 4.9,
-  totalReviews: 230,
+  totalReviews: 248,
   platform: "Google Reviews",
 };
