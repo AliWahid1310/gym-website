@@ -9,6 +9,7 @@ import Pricing from "@/components/Pricing";
 import VirtualTour from "@/components/VirtualTour";
 import Testimonials from "@/components/Testimonials";
 import OwnerMessage from "@/components/OwnerMessage";
+import FAQ from "@/components/FAQ";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
@@ -69,10 +70,13 @@ export default function Home() {
         {/* 9. Message from the Owner */}
         <OwnerMessage />
 
+        {/* 10. Frequently Asked Questions */}
+        <FAQ />
+
         {/* Divider: Dark → Red */}
         <SectionDivider from="#0A0A0A" to="#D91E2A" direction="right" height={80} />
 
-        {/* 10. Lead Capture / Final CTA */}
+        {/* 11. Lead Capture / Final CTA */}
         <LeadForm />
       </main>
 
