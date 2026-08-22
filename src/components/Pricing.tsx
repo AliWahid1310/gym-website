@@ -218,6 +218,33 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+
+        {/* Student & Corporate Discount Banner */}
+        <div
+          className={`mt-14 max-w-5xl mx-auto rounded-2xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <div className="flex items-center gap-4 text-left">
+            <div className="w-12 h-12 rounded-xl bg-[#D91E2A]/10 border border-[#D91E2A]/30 flex items-center justify-center text-2xl flex-shrink-0">
+              🎓
+            </div>
+            <div>
+              <h4 className="text-white font-bold text-base sm:text-lg">
+                Student & Corporate Group Discounts Available
+              </h4>
+              <p className="text-neutral-400 text-xs sm:text-sm mt-0.5">
+                Present a valid student ID or register with 3+ coworkers to unlock an additional 15% off any tier.
+              </p>
+            </div>
+          </div>
+          <a
+            href="#contact"
+            className="flex-shrink-0 px-6 py-3 rounded-lg border border-neutral-700 bg-neutral-800 text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#D91E2A] hover:border-[#D91E2A] transition-all"
+          >
+            Inquire Group Rate
+          </a>
+        </div>
       </div>
     </section>
   );
