@@ -6,6 +6,7 @@ import Programs from "@/components/Programs";
 import Schedule from "@/components/Schedule";
 import Trainers from "@/components/Trainers";
 import Pricing from "@/components/Pricing";
+import BmiCalculator from "@/components/BmiCalculator";
 import VirtualTour from "@/components/VirtualTour";
 import Testimonials from "@/components/Testimonials";
 import OwnerMessage from "@/components/OwnerMessage";
@@ -54,6 +55,9 @@ export default function Home() {
 
         {/* 6. Membership / Pricing */}
         <Pricing />
+
+        {/* BMI Assessment Tool */}
+        <BmiCalculator />
 
         {/* 7. Virtual Tour */}
         <VirtualTour />
