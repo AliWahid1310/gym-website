@@ -76,4 +76,26 @@ export const programs: Program[] = [
     intensity: "Medium",
     category: "ATHLETIC",
   },
+  {
+    id: "calisthenics",
+    name: "Calisthenics & Bodyweight",
+    description:
+      "Master advanced bodyweight mechanics, ring work, muscle-ups, and core control for superhuman strength.",
+    image: "/images/program-strength.jpg",
+    slug: "calisthenics-bodyweight",
+    duration: "55 Mins",
+    intensity: "High",
+    category: "BODYWEIGHT",
+  },
+  {
+    id: "spin",
+    name: "Spin & Cycle Sprint",
+    description:
+      "High-cadence rhythm cycling and interval climbs designed to supercharge lung capacity and endurance.",
+    image: "/images/program-hiit.jpg",
+    slug: "spin-cycle-sprint",
+    duration: "45 Mins",
+    intensity: "High",
+    category: "ENDURANCE",
+  },
 ];
