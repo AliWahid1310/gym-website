@@ -15,6 +15,7 @@ import Transformations from "@/components/Transformations";
 import Testimonials from "@/components/Testimonials";
 import OwnerMessage from "@/components/OwnerMessage";
 import FAQ from "@/components/FAQ";
+import BlogSection from "@/components/BlogSection";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
@@ -93,6 +94,9 @@ export default function Home() {
 
         {/* 10. Frequently Asked Questions */}
         <FAQ />
+
+        {/* 11. Fitness & Nutrition Guides */}
+        <BlogSection />
 
         {/* Divider: Dark → Red */}
         <SectionDivider from="#0A0A0A" to="#D91E2A" direction="right" height={80} />
