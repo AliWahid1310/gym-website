@@ -19,6 +19,7 @@ import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import BranchModal from "@/components/BranchModal";
+import FreePassModal from "@/components/FreePassModal";
 import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
@@ -105,6 +106,9 @@ export default function Home() {
 
       {/* Mobile Sticky CTA */}
       <MobileCTA />
+
+      {/* Free 1-Day Guest Pass Generator */}
+      <FreePassModal />
 
       {/* Back To Top Button */}
       <BackToTop />
