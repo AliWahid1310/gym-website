@@ -73,28 +73,48 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ExerciseGym",
+              "@type": "HealthClub",
               "@id": "https://powerfitzone.com",
               name: "Power Fitness Zone",
               description:
-                "Premier fitness and strength conditioning center with expert trainers, Olympic equipment, sauna suites, and customized nutrition coaching.",
+                "Premier multi-location fitness & strength conditioning center with certified trainers, Olympic equipment, macro nutrition plans, Finnish sauna, and 3 modern branches in Islamabad.",
               image: "/images/og-image.jpg",
               telephone: "+92-300-1234567",
               currenciesAccepted: "PKR",
               paymentAccepted: "Cash, Credit Card, Bank Transfer, JazzCash, EasyPaisa",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Main Boulevard, Model Town & DHA Phase 5",
-                addressLocality: "Lahore",
-                addressRegion: "Punjab",
-                postalCode: "54000",
+                streetAddress: "Executive Heights, F-8 Markaz",
+                addressLocality: "Islamabad",
+                addressRegion: "Islamabad Capital Territory",
+                postalCode: "44000",
                 addressCountry: "PK",
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 31.5204,
-                longitude: 74.3587,
+                latitude: 33.7142,
+                longitude: 73.0441,
               },
+              subOrganization: [
+                {
+                  "@type": "ExerciseGym",
+                  name: "Power Fitness Zone — F-8 Flagship",
+                  address: "Plot 14-B, Executive Heights, F-8 Markaz, Islamabad",
+                  telephone: "+92-51-2854901",
+                },
+                {
+                  "@type": "ExerciseGym",
+                  name: "Power Fitness Zone — G-8 Center",
+                  address: "Main Double Road, Near Ayub Market, G-8/1, Islamabad",
+                  telephone: "+92-51-2289410",
+                },
+                {
+                  "@type": "ExerciseGym",
+                  name: "Power Fitness Zone — F-10 Premium",
+                  address: "Sumbal Road, Corner Avenue, F-10 Markaz, Islamabad",
+                  telephone: "+92-51-2110933",
+                },
+              ],
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
@@ -107,12 +127,12 @@ export default function RootLayout({
                     "Saturday",
                   ],
                   opens: "06:00",
-                  closes: "23:00",
+                  closes: "23:30",
                 },
                 {
                   "@type": "OpeningHoursSpecification",
                   dayOfWeek: ["Sunday"],
-                  opens: "08:00",
+                  opens: "10:00",
                   closes: "20:00",
                 },
               ],
