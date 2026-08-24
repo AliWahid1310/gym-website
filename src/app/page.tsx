@@ -9,6 +9,7 @@ import Pricing from "@/components/Pricing";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import Amenities from "@/components/Amenities";
+import BranchExplorer from "@/components/BranchExplorer";
 import VirtualTour from "@/components/VirtualTour";
 import Transformations from "@/components/Transformations";
 import Testimonials from "@/components/Testimonials";
@@ -67,6 +68,9 @@ export default function Home() {
 
         {/* 7. Premium Amenities */}
         <Amenities />
+
+        {/* Islamabad Branch Explorer */}
+        <BranchExplorer />
 
         {/* 8. Virtual Tour */}
         <VirtualTour />
