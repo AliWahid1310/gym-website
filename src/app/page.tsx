@@ -7,6 +7,7 @@ import Schedule from "@/components/Schedule";
 import Trainers from "@/components/Trainers";
 import Pricing from "@/components/Pricing";
 import BmiCalculator from "@/components/BmiCalculator";
+import MacroCalculator from "@/components/MacroCalculator";
 import Amenities from "@/components/Amenities";
 import VirtualTour from "@/components/VirtualTour";
 import Testimonials from "@/components/Testimonials";
@@ -59,6 +60,9 @@ export default function Home() {
 
         {/* BMI Assessment Tool */}
         <BmiCalculator />
+
+        {/* Custom Macro & TDEE Nutrition Calculator */}
+        <MacroCalculator />
 
         {/* 7. Premium Amenities */}
         <Amenities />
