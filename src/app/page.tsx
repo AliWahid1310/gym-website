@@ -9,6 +9,7 @@ import Trainers from "@/components/Trainers";
 import Pricing from "@/components/Pricing";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
+import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
 import Amenities from "@/components/Amenities";
 import BranchExplorer from "@/components/BranchExplorer";
 import VirtualTour from "@/components/VirtualTour";
@@ -71,6 +72,9 @@ export default function Home() {
 
         {/* Custom Macro & TDEE Nutrition Calculator */}
         <MacroCalculator />
+
+        {/* 1-Rep Max Strength Standards Calculator */}
+        <OneRepMaxCalculator />
 
         {/* 7. Premium Amenities */}
         <Amenities />
