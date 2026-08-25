@@ -8,14 +8,14 @@ import {
   days,
   type Day,
   type ClassCategory,
-  type ClassItem,
+  type ClassSession,
 } from "@/data/schedule";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function Schedule() {
   const [selectedDay, setSelectedDay] = useState<Day>("Monday");
   const [selectedCategory, setSelectedCategory] = useState<ClassCategory>("all");
-  const [bookingClass, setBookingClass] = useState<ClassItem | null>(null);
+  const [bookingClass, setBookingClass] = useState<ClassSession | null>(null);
   const [bookedSuccess, setBookedSuccess] = useState(false);
   const [userName, setUserName] = useState("");
   const [userPhone, setUserPhone] = useState("");
