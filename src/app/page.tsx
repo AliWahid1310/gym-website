@@ -7,6 +7,7 @@ import WorkoutGenerator from "@/components/WorkoutGenerator";
 import Schedule from "@/components/Schedule";
 import Trainers from "@/components/Trainers";
 import Pricing from "@/components/Pricing";
+import MerchShowcase from "@/components/MerchShowcase";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
@@ -66,6 +67,9 @@ export default function Home() {
 
         {/* 6. Membership / Pricing */}
         <Pricing />
+
+        {/* Official Merch & Supplement Stack */}
+        <MerchShowcase />
 
         {/* BMI Assessment Tool */}
         <BmiCalculator />
