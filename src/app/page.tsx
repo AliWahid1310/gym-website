@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import SectionDivider from "@/components/SectionDivider";
 import Programs from "@/components/Programs";
+import WorkoutGenerator from "@/components/WorkoutGenerator";
 import Schedule from "@/components/Schedule";
 import Trainers from "@/components/Trainers";
 import Pricing from "@/components/Pricing";
@@ -43,6 +44,9 @@ export default function Home() {
 
         {/* 3. Featured Programs */}
         <Programs />
+
+        {/* Custom Workout Split Generator */}
+        <WorkoutGenerator />
 
         {/* Divider: White → Off-white */}
         <SectionDivider from="#FFFFFF" to="#F5F5F5" direction="left" height={60} />
