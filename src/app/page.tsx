@@ -18,6 +18,7 @@ import Transformations from "@/components/Transformations";
 import GymPlaylist from "@/components/GymPlaylist";
 import Testimonials from "@/components/Testimonials";
 import OwnerMessage from "@/components/OwnerMessage";
+import ReferralProgram from "@/components/ReferralProgram";
 import FAQ from "@/components/FAQ";
 import BlogSection from "@/components/BlogSection";
 import LeadForm from "@/components/LeadForm";
@@ -107,6 +108,9 @@ export default function Home() {
 
         {/* 9. Message from the Owner */}
         <OwnerMessage />
+
+        {/* Member Referral Program */}
+        <ReferralProgram />
 
         {/* 10. Frequently Asked Questions */}
         <FAQ />
