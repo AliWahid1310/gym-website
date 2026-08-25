@@ -15,6 +15,7 @@ import Amenities from "@/components/Amenities";
 import BranchExplorer from "@/components/BranchExplorer";
 import VirtualTour from "@/components/VirtualTour";
 import Transformations from "@/components/Transformations";
+import GymPlaylist from "@/components/GymPlaylist";
 import Testimonials from "@/components/Testimonials";
 import OwnerMessage from "@/components/OwnerMessage";
 import FAQ from "@/components/FAQ";
@@ -91,6 +92,9 @@ export default function Home() {
 
         {/* Member Transformations */}
         <Transformations />
+
+        {/* Workout Energy Audio Beats */}
+        <GymPlaylist />
 
         {/* Divider: Dark → Off-white */}
         <SectionDivider from="#0A0A0A" to="#F5F5F5" direction="right" height={60} />
