@@ -5,12 +5,18 @@ import SectionDivider from "@/components/SectionDivider";
 import Programs from "@/components/Programs";
 import WorkoutGenerator from "@/components/WorkoutGenerator";
 import Schedule from "@/components/Schedule";
+import GymLiveTracker from "@/components/GymLiveTracker";
 import Trainers from "@/components/Trainers";
+import CoachFinder from "@/components/CoachFinder";
 import Pricing from "@/components/Pricing";
 import MerchShowcase from "@/components/MerchShowcase";
+import SupplementBuilder from "@/components/SupplementBuilder";
+import EquipmentGuide from "@/components/EquipmentGuide";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
+import CalorieBurnCalculator from "@/components/CalorieBurnCalculator";
+import FitnessGoalTimeline from "@/components/FitnessGoalTimeline";
 import Amenities from "@/components/Amenities";
 import BranchExplorer from "@/components/BranchExplorer";
 import VirtualTour from "@/components/VirtualTour";
@@ -58,11 +64,20 @@ export default function Home() {
         {/* 4. Class Schedule */}
         <Schedule />
 
+        {/* Live Gym Capacity & Peak Hours Tracker */}
+        <GymLiveTracker />
+
         {/* Divider: Off-white → Dark */}
         <SectionDivider from="#F5F5F5" to="#0A0A0A" direction="right" height={80} />
 
         {/* 5. Trainer Profiles */}
         <Trainers />
+
+        {/* AI Coach Matcher Quiz */}
+        <CoachFinder />
+
+        {/* Commercial Gym Equipment & Technique Guide */}
+        <EquipmentGuide />
 
         {/* Divider: Dark → White */}
         <SectionDivider from="#0A0A0A" to="#FFFFFF" direction="left" height={80} />
@@ -70,17 +85,18 @@ export default function Home() {
         {/* 6. Membership / Pricing */}
         <Pricing />
 
-        {/* Official Merch & Supplement Stack */}
+        {/* Official Merch & Certified Supplements */}
         <MerchShowcase />
 
-        {/* BMI Assessment Tool */}
+        {/* Custom Supplement Stack Builder */}
+        <SupplementBuilder />
+
+        {/* Interactive Fitness Calculation Suite */}
         <BmiCalculator />
-
-        {/* Custom Macro & TDEE Nutrition Calculator */}
         <MacroCalculator />
-
-        {/* 1-Rep Max Strength Standards Calculator */}
         <OneRepMaxCalculator />
+        <CalorieBurnCalculator />
+        <FitnessGoalTimeline />
 
         {/* 7. Premium Amenities */}
         <Amenities />

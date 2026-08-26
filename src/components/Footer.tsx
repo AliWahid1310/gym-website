@@ -3,12 +3,18 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const quickLinks = [
-  { label: "Programs", href: "#programs" },
-  { label: "Schedule", href: "#schedule" },
-  { label: "Trainers", href: "#trainers" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Reviews", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Programs & Workouts", href: "#programs" },
+  { label: "Class Schedule & Booking", href: "#schedule" },
+  { label: "Live Gym Capacity Tracker", href: "#live-tracker" },
+  { label: "AI Coach Matcher", href: "#coach-finder" },
+  { label: "Commercial Equipment Guide", href: "#equipment" },
+  { label: "Workout Calorie Burn Calculator", href: "#calorie-burn" },
+  { label: "Goal Timeline Projector", href: "#goal-timeline" },
+  { label: "Supplement Stack Builder", href: "#supplements" },
+  { label: "Membership Pricing", href: "#pricing" },
+  { label: "Islamabad Branch Explorer", href: "#branches" },
+  { label: "Member Reviews", href: "#testimonials" },
+  { label: "Contact & Free Pass", href: "#contact" },
 ];
 
 const hours = [
