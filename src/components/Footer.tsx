@@ -4,16 +4,19 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const quickLinks = [
   { label: "Programs & Workouts", href: "#programs" },
+  { label: "HIIT Workout Timer", href: "#interval-timer" },
   { label: "Class Schedule & Booking", href: "#schedule" },
   { label: "Live Gym Capacity Tracker", href: "#live-tracker" },
   { label: "AI Coach Matcher", href: "#coach-finder" },
   { label: "Commercial Equipment Guide", href: "#equipment" },
-  { label: "Workout Calorie Burn Calculator", href: "#calorie-burn" },
+  { label: "Membership Plan Finder", href: "#membership-finder" },
+  { label: "Pakistani Meal Planner", href: "#meal-planner" },
+  { label: "Hydration & Electrolyte Target", href: "#hydration-calculator" },
+  { label: "Muscle Soreness & Recovery", href: "#recovery-tracker" },
+  { label: "Monthly Member Challenges", href: "#gym-challenges" },
   { label: "Goal Timeline Projector", href: "#goal-timeline" },
   { label: "Supplement Stack Builder", href: "#supplements" },
-  { label: "Membership Pricing", href: "#pricing" },
   { label: "Islamabad Branch Explorer", href: "#branches" },
-  { label: "Member Reviews", href: "#testimonials" },
   { label: "Contact & Free Pass", href: "#contact" },
 ];
 

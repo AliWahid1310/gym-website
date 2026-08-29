@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
-  { label: "About", href: "#about" },
   { label: "Programs", href: "#programs" },
+  { label: "HIIT Timer", href: "#interval-timer" },
   { label: "Schedule", href: "#schedule" },
   { label: "Live Crowd", href: "#live-tracker" },
   { label: "Coach Finder", href: "#coach-finder" },
   { label: "Equipment", href: "#equipment" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Supplements", href: "#supplements" },
-  { label: "Reviews", href: "#testimonials" },
+  { label: "Pricing & Plans", href: "#pricing" },
+  { label: "Meal Fuel", href: "#meal-planner" },
+  { label: "Challenges", href: "#gym-challenges" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];

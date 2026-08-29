@@ -4,19 +4,25 @@ import About from "@/components/About";
 import SectionDivider from "@/components/SectionDivider";
 import Programs from "@/components/Programs";
 import WorkoutGenerator from "@/components/WorkoutGenerator";
+import IntervalTimer from "@/components/IntervalTimer";
 import Schedule from "@/components/Schedule";
 import GymLiveTracker from "@/components/GymLiveTracker";
 import Trainers from "@/components/Trainers";
 import CoachFinder from "@/components/CoachFinder";
+import EquipmentGuide from "@/components/EquipmentGuide";
 import Pricing from "@/components/Pricing";
+import MembershipQuiz from "@/components/MembershipQuiz";
 import MerchShowcase from "@/components/MerchShowcase";
 import SupplementBuilder from "@/components/SupplementBuilder";
-import EquipmentGuide from "@/components/EquipmentGuide";
+import MealPlanner from "@/components/MealPlanner";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
 import CalorieBurnCalculator from "@/components/CalorieBurnCalculator";
+import HydrationCalculator from "@/components/HydrationCalculator";
+import RecoveryTracker from "@/components/RecoveryTracker";
 import FitnessGoalTimeline from "@/components/FitnessGoalTimeline";
+import ChallengesSection from "@/components/ChallengesSection";
 import Amenities from "@/components/Amenities";
 import BranchExplorer from "@/components/BranchExplorer";
 import VirtualTour from "@/components/VirtualTour";
@@ -58,6 +64,9 @@ export default function Home() {
         {/* Custom Workout Split Generator */}
         <WorkoutGenerator />
 
+        {/* HIIT & Tabata Gym Interval Training Timer */}
+        <IntervalTimer />
+
         {/* Divider: White → Off-white */}
         <SectionDivider from="#FFFFFF" to="#F5F5F5" direction="left" height={60} />
 
@@ -85,18 +94,29 @@ export default function Home() {
         {/* 6. Membership / Pricing */}
         <Pricing />
 
+        {/* Interactive Membership Plan Finder & ROI Calculator */}
+        <MembershipQuiz />
+
         {/* Official Merch & Certified Supplements */}
         <MerchShowcase />
 
         {/* Custom Supplement Stack Builder */}
         <SupplementBuilder />
 
-        {/* Interactive Fitness Calculation Suite */}
+        {/* Pakistani Gym Fuel & Meal Planner */}
+        <MealPlanner />
+
+        {/* Interactive Fitness Calculation & Performance Suite */}
         <BmiCalculator />
         <MacroCalculator />
         <OneRepMaxCalculator />
         <CalorieBurnCalculator />
+        <HydrationCalculator />
+        <RecoveryTracker />
         <FitnessGoalTimeline />
+
+        {/* Monthly Member Challenges & Badges */}
+        <ChallengesSection />
 
         {/* 7. Premium Amenities */}
         <Amenities />
