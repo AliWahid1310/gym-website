@@ -18,6 +18,7 @@ import MealPlanner from "@/components/MealPlanner";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
+import ProgressiveOverloadCalculator from "@/components/ProgressiveOverloadCalculator";
 import CalorieBurnCalculator from "@/components/CalorieBurnCalculator";
 import HydrationCalculator from "@/components/HydrationCalculator";
 import BodyFatCalculator from "@/components/BodyFatCalculator";
@@ -111,6 +112,7 @@ export default function Home() {
         <BmiCalculator />
         <MacroCalculator />
         <OneRepMaxCalculator />
+        <ProgressiveOverloadCalculator />
         <CalorieBurnCalculator />
         <HydrationCalculator />
         <BodyFatCalculator />
