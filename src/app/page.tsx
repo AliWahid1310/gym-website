@@ -43,6 +43,7 @@ import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import BranchModal from "@/components/BranchModal";
 import FreePassModal from "@/components/FreePassModal";
+import GymToolkitModal from "@/components/GymToolkitModal";
 import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
@@ -179,6 +180,9 @@ export default function Home() {
 
       {/* Free 1-Day Guest Pass Generator */}
       <FreePassModal />
+
+      {/* Floating Speed Dial Fitness Toolkit Hub */}
+      <GymToolkitModal />
 
       {/* Back To Top Button */}
       <BackToTop />
