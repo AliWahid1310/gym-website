@@ -57,7 +57,7 @@ export default function RecoveryTracker() {
   };
 
   // Calculate readiness score
-  const totalMuscleFatigue = Object.values(muscleStatus).reduce((a, b) => a + b, 0);
+  const totalMuscleFatigue = (Object.values(muscleStatus) as number[]).reduce((a, b) => a + b, 0);
   const maxPossibleFatigue = Object.keys(muscleStatus).length * 3; // 24 max
   const muscleRecoveryRatio = 1 - totalMuscleFatigue / maxPossibleFatigue;
 
