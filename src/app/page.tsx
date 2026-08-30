@@ -20,6 +20,7 @@ import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
 import CalorieBurnCalculator from "@/components/CalorieBurnCalculator";
 import HydrationCalculator from "@/components/HydrationCalculator";
+import BodyFatCalculator from "@/components/BodyFatCalculator";
 import RecoveryTracker from "@/components/RecoveryTracker";
 import FitnessGoalTimeline from "@/components/FitnessGoalTimeline";
 import ChallengesSection from "@/components/ChallengesSection";
@@ -112,6 +113,7 @@ export default function Home() {
         <OneRepMaxCalculator />
         <CalorieBurnCalculator />
         <HydrationCalculator />
+        <BodyFatCalculator />
         <RecoveryTracker />
         <FitnessGoalTimeline />
 
