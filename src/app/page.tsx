@@ -15,6 +15,7 @@ import MembershipQuiz from "@/components/MembershipQuiz";
 import MerchShowcase from "@/components/MerchShowcase";
 import SupplementBuilder from "@/components/SupplementBuilder";
 import MealPlanner from "@/components/MealPlanner";
+import ProteinCostCalculator from "@/components/ProteinCostCalculator";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
@@ -107,6 +108,7 @@ export default function Home() {
 
         {/* Pakistani Gym Fuel & Meal Planner */}
         <MealPlanner />
+        <ProteinCostCalculator />
 
         {/* Interactive Fitness Calculation & Performance Suite */}
         <BmiCalculator />
