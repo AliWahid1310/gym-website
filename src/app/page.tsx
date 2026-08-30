@@ -26,6 +26,7 @@ import BodyFatCalculator from "@/components/BodyFatCalculator";
 import RecoveryTracker from "@/components/RecoveryTracker";
 import FitnessGoalTimeline from "@/components/FitnessGoalTimeline";
 import ChallengesSection from "@/components/ChallengesSection";
+import GymEtiquetteGuide from "@/components/GymEtiquetteGuide";
 import Amenities from "@/components/Amenities";
 import BranchExplorer from "@/components/BranchExplorer";
 import VirtualTour from "@/components/VirtualTour";
@@ -123,6 +124,7 @@ export default function Home() {
 
         {/* Monthly Member Challenges & Badges */}
         <ChallengesSection />
+        <GymEtiquetteGuide />
 
         {/* 7. Premium Amenities */}
         <Amenities />
