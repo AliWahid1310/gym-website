@@ -32,6 +32,7 @@ import BranchExplorer from "@/components/BranchExplorer";
 import VirtualTour from "@/components/VirtualTour";
 import Transformations from "@/components/Transformations";
 import GymPlaylist from "@/components/GymPlaylist";
+import GymSoundboard from "@/components/GymSoundboard";
 import Testimonials from "@/components/Testimonials";
 import OwnerMessage from "@/components/OwnerMessage";
 import ReferralProgram from "@/components/ReferralProgram";
@@ -140,6 +141,7 @@ export default function Home() {
 
         {/* Workout Energy Audio Beats */}
         <GymPlaylist />
+        <GymSoundboard />
 
         {/* Divider: Dark → Off-white */}
         <SectionDivider from="#0A0A0A" to="#F5F5F5" direction="right" height={60} />
