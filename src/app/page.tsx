@@ -4,6 +4,7 @@ import About from "@/components/About";
 import SectionDivider from "@/components/SectionDivider";
 import Programs from "@/components/Programs";
 import WorkoutGenerator from "@/components/WorkoutGenerator";
+import WarmupGenerator from "@/components/WarmupGenerator";
 import IntervalTimer from "@/components/IntervalTimer";
 import Schedule from "@/components/Schedule";
 import GymLiveTracker from "@/components/GymLiveTracker";
@@ -14,12 +15,15 @@ import Pricing from "@/components/Pricing";
 import MembershipQuiz from "@/components/MembershipQuiz";
 import MerchShowcase from "@/components/MerchShowcase";
 import SupplementBuilder from "@/components/SupplementBuilder";
+import CaffeineOptimizer from "@/components/CaffeineOptimizer";
 import MealPlanner from "@/components/MealPlanner";
 import ProteinCostCalculator from "@/components/ProteinCostCalculator";
+import DesiGymRecipes from "@/components/DesiGymRecipes";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
 import ProgressiveOverloadCalculator from "@/components/ProgressiveOverloadCalculator";
+import StrengthStandards from "@/components/StrengthStandards";
 import CalorieBurnCalculator from "@/components/CalorieBurnCalculator";
 import HydrationCalculator from "@/components/HydrationCalculator";
 import BodyFatCalculator from "@/components/BodyFatCalculator";
@@ -29,6 +33,7 @@ import ChallengesSection from "@/components/ChallengesSection";
 import GymEtiquetteGuide from "@/components/GymEtiquetteGuide";
 import Amenities from "@/components/Amenities";
 import BranchExplorer from "@/components/BranchExplorer";
+import GymEquipmentTracker from "@/components/GymEquipmentTracker";
 import VirtualTour from "@/components/VirtualTour";
 import Transformations from "@/components/Transformations";
 import GymPlaylist from "@/components/GymPlaylist";
@@ -70,6 +75,9 @@ export default function Home() {
         {/* Custom Workout Split Generator */}
         <WorkoutGenerator />
 
+        {/* Dynamic Warm-Up & Joint Mobility Protocol */}
+        <WarmupGenerator />
+
         {/* HIIT & Tabata Gym Interval Training Timer */}
         <IntervalTimer />
 
@@ -109,15 +117,20 @@ export default function Home() {
         {/* Custom Supplement Stack Builder */}
         <SupplementBuilder />
 
+        {/* Pre-Workout Caffeine & Sleep Recovery Optimizer */}
+        <CaffeineOptimizer />
+
         {/* Pakistani Gym Fuel & Meal Planner */}
         <MealPlanner />
         <ProteinCostCalculator />
+        <DesiGymRecipes />
 
         {/* Interactive Fitness Calculation & Performance Suite */}
         <BmiCalculator />
         <MacroCalculator />
         <OneRepMaxCalculator />
         <ProgressiveOverloadCalculator />
+        <StrengthStandards />
         <CalorieBurnCalculator />
         <HydrationCalculator />
         <BodyFatCalculator />
@@ -133,6 +146,9 @@ export default function Home() {
 
         {/* Islamabad Branch Explorer */}
         <BranchExplorer />
+
+        {/* Live Multi-Branch Equipment & Rack Availability */}
+        <GymEquipmentTracker />
 
         {/* 8. Virtual Tour */}
         <VirtualTour />
