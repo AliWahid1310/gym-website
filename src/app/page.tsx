@@ -19,6 +19,11 @@ import CaffeineOptimizer from "@/components/CaffeineOptimizer";
 import MealPlanner from "@/components/MealPlanner";
 import ProteinCostCalculator from "@/components/ProteinCostCalculator";
 import DesiGymRecipes from "@/components/DesiGymRecipes";
+import RamadanFitnessGuide from "@/components/RamadanFitnessGuide";
+import BarbellPlateCalculator from "@/components/BarbellPlateCalculator";
+import MemberPassWallet from "@/components/MemberPassWallet";
+import TempoMetronome from "@/components/TempoMetronome";
+import WorkoutLogger from "@/components/WorkoutLogger";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
@@ -81,6 +86,9 @@ export default function Home() {
         {/* HIIT & Tabata Gym Interval Training Timer */}
         <IntervalTimer />
 
+        {/* Lifting Cadence & Rep Tempo Audio Metronome */}
+        <TempoMetronome />
+
         {/* Divider: White → Off-white */}
         <SectionDivider from="#FFFFFF" to="#F5F5F5" direction="left" height={60} />
 
@@ -111,6 +119,9 @@ export default function Home() {
         {/* Interactive Membership Plan Finder & ROI Calculator */}
         <MembershipQuiz />
 
+        {/* Digital Member ID Pass Wallet & QR Check-in Simulator */}
+        <MemberPassWallet />
+
         {/* Official Merch & Certified Supplements */}
         <MerchShowcase />
 
@@ -125,11 +136,16 @@ export default function Home() {
         <ProteinCostCalculator />
         <DesiGymRecipes />
 
+        {/* Ramadan Fasting & Training Protocol Planner */}
+        <RamadanFitnessGuide />
+
         {/* Interactive Fitness Calculation & Performance Suite */}
         <BmiCalculator />
         <MacroCalculator />
         <OneRepMaxCalculator />
+        <BarbellPlateCalculator />
         <ProgressiveOverloadCalculator />
+        <WorkoutLogger />
         <StrengthStandards />
         <CalorieBurnCalculator />
         <HydrationCalculator />
