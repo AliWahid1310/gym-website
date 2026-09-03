@@ -14,8 +14,9 @@ const categories: Array<"All" | FAQItem["category"]> = [
 
 export default function FAQ() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [openIndex, setOpenIndex] = useState<string | null>("faq-1");
+  const [searchQuery, setSearchQuery] = useState<string>("" );
+  const [openIds, setOpenIds] = useState<string[]>(["faq-1"]);
+  const [copiedFaqId, setCopiedFaqId] = useState<string | null>(null);
 
   const filteredFaqs = faqs.filter((faq) => {
     const matchesCategory = activeCategory === "All" || faq.category === activeCategory;
@@ -27,7 +28,23 @@ export default function FAQ() {
   });
 
   const toggleAccordion = (id: string) => {
-    setOpenIndex((prev) => (prev === id ? null : id));
+    setOpenIds((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
+  const handleExpandAll = () => {
+    setOpenIds(filteredFaqs.map((f) => f.id));
+  };
+
+  const handleCollapseAll = () => {
+    setOpenIds([]);
+  };
+
+  const handleCopyAnswer = (faq: FAQItem) => {
+    navigator.clipboard.writeText(`Q: ${faq.question}\nA: ${faq.answer}`);
+    setCopiedFaqId(faq.id);
+    setTimeout(() => setCopiedFaqId(null), 2000);
   };
 
   return (
@@ -71,21 +88,47 @@ export default function FAQ() {
           )}
         </div>
 
-        {/* Category Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          {categories.map((category) => (
+        {/* Category Pills & Expand/Collapse Controls */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {categories.map((category) => {
+              const count =
+                category === "All"
+                  ? faqs.length
+                  : faqs.filter((f) => f.category === category).length;
+              return (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                    activeCategory === category
+                      ? "bg-[#D91E2A] text-white shadow-md shadow-[#D91E2A]/30 scale-105"
+                      : "bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-700 hover:text-white"
+                  }`}
+                >
+                  <span>{category}</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeCategory === category ? "bg-black/30 text-white" : "bg-neutral-800 text-neutral-400"}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0 text-xs">
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                activeCategory === category
-                  ? "bg-[#D91E2A] text-white shadow-md shadow-[#D91E2A]/30 scale-105"
-                  : "bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-700 hover:text-white"
-              }`}
+              onClick={handleExpandAll}
+              className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800 transition"
             >
-              {category}
+              Expand All
             </button>
-          ))}
+            <button
+              onClick={handleCollapseAll}
+              className="px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800 transition"
+            >
+              Collapse All
+            </button>
+          </div>
         </div>
 
         {/* FAQ Accordion List */}
@@ -107,7 +150,9 @@ export default function FAQ() {
             </div>
           ) : (
             filteredFaqs.map((faq) => {
-              const isOpen = openIndex === faq.id;
+              const isOpen = openIds.includes(faq.id);
+              const isCopied = copiedFaqId === faq.id;
+
               return (
                 <div
                   key={faq.id}
@@ -151,7 +196,16 @@ export default function FAQ() {
 
                   {isOpen && (
                     <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-neutral-300 leading-relaxed border-t border-neutral-800/60 animate-fadeIn">
-                      {faq.answer}
+                      <p>{faq.answer}</p>
+                      <div className="mt-4 flex items-center justify-between pt-3 border-t border-neutral-800/40 text-xs">
+                        <span className="text-neutral-500 font-mono">Category: {faq.category}</span>
+                        <button
+                          onClick={() => handleCopyAnswer(faq)}
+                          className="text-neutral-400 hover:text-white transition flex items-center gap-1 font-medium"
+                        >
+                          {isCopied ? "✓ Copied to clipboard" : "📋 Copy answer"}
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -181,3 +235,4 @@ export default function FAQ() {
     </section>
   );
 }
+
