@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type ExperienceLevel = "beginner" | "intermediate" | "advanced";
 type DaysPerWeek = 3 | 4 | 5 | 6;
@@ -25,6 +25,30 @@ export default function WorkoutGenerator() {
   const [days, setDays] = useState<DaysPerWeek>(4);
   const [goal, setGoal] = useState<FocusGoal>("hypertrophy");
   const [copied, setCopied] = useState(false);
+  const [showWarmup, setShowWarmup] = useState(true);
+
+  // Mini Rest Timer State
+  const [activeTimerSeconds, setActiveTimerSeconds] = useState<number | null>(null);
+  const [timerRunning, setTimerRunning] = useState(false);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null;
+    if (timerRunning && activeTimerSeconds !== null && activeTimerSeconds > 0) {
+      interval = setInterval(() => {
+        setActiveTimerSeconds((prev) => (prev !== null && prev > 0 ? prev - 1 : 0));
+      }, 1000);
+    } else if (activeTimerSeconds === 0) {
+      setTimerRunning(false);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [timerRunning, activeTimerSeconds]);
+
+  const startRestTimer = (seconds: number) => {
+    setActiveTimerSeconds(seconds);
+    setTimerRunning(true);
+  };
 
   const generateSplit = (): { splitName: string; schedule: RoutineDay[] } => {
     if (days === 3) {
@@ -142,7 +166,7 @@ export default function WorkoutGenerator() {
 
   const currentSplit = generateSplit();
 
-  const handleCopyRoutine = () => {
+  const getRoutineText = () => {
     let text = `⚡ Power Fitness Zone — ${currentSplit.splitName}\nExperience: ${experience.toUpperCase()} | Goal: ${goal.toUpperCase()}\n\n`;
     currentSplit.schedule.forEach((day) => {
       text += `📌 ${day.dayName} (${day.focus})\n`;
@@ -151,9 +175,23 @@ export default function WorkoutGenerator() {
       });
       text += "\n";
     });
-    navigator.clipboard.writeText(text);
+    return text;
+  };
+
+  const handleCopyRoutine = () => {
+    navigator.clipboard.writeText(getRoutineText());
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleDownloadRoutine = () => {
+    const element = document.createElement("a");
+    const file = new Blob([getRoutineText()], { type: "text/plain" });
+    element.href = URL.createObjectURL(file);
+    element.download = `PowerFitnessZone-${currentSplit.splitName.replace(/\s+/g, "_")}.txt`;
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
   };
 
   return (
@@ -163,16 +201,16 @@ export default function WorkoutGenerator() {
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-red-950/80 text-red-400 border border-red-800/50 mb-4">
             Smart Training Engine
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight font-display">
             Custom <span className="text-red-500">Workout Split</span> Generator
           </h2>
-          <p className="mt-4 text-neutral-400 text-base sm:text-lg">
+          <p className="mt-4 text-neutral-400 text-base sm:text-lg font-body">
             Build your science-backed training protocol tailored to your schedule, training age, and target physique.
           </p>
         </div>
 
         {/* Controls Grid */}
-        <div className="bg-neutral-900/90 border border-neutral-800 rounded-3xl p-6 sm:p-8 mb-10 shadow-2xl">
+        <div className="bg-neutral-900/90 border border-neutral-800 rounded-3xl p-6 sm:p-8 mb-8 shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Days per week */}
             <div>
@@ -241,18 +279,79 @@ export default function WorkoutGenerator() {
           </div>
         </div>
 
+        {/* Dynamic Warm-Up and Rest Timer Bar */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div className="bg-neutral-900/70 border border-neutral-800 rounded-2xl p-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-xl">🏃</span>
+              <div>
+                <span className="text-xs font-bold text-white block">Pre-Workout Dynamic Warmup</span>
+                <span className="text-[11px] text-neutral-400">5 Mins: Arm circles, World&apos;s Greatest Stretch, Band Pull-Aparts</span>
+              </div>
+            </div>
+            <button
+              onClick={() => setShowWarmup(!showWarmup)}
+              className="text-xs text-red-400 hover:text-red-300 font-semibold px-2 py-1 rounded bg-neutral-800 border border-neutral-700 shrink-0"
+            >
+              {showWarmup ? "Hide" : "Show"}
+            </button>
+          </div>
+
+          <div className="bg-neutral-900/70 border border-neutral-800 rounded-2xl p-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-xl">⏱️</span>
+              <div>
+                <span className="text-xs font-bold text-white block">Interactive Rest Timer</span>
+                <span className="text-[11px] font-mono text-amber-400">
+                  {activeTimerSeconds !== null && activeTimerSeconds > 0
+                    ? `Time Left: ${Math.floor(activeTimerSeconds / 60)}:${(activeTimerSeconds % 60).toString().padStart(2, "0")}`
+                    : activeTimerSeconds === 0
+                    ? "Time's Up! Next Set!"
+                    : "Select rest duration:"}
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                onClick={() => startRestTimer(60)}
+                className="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-mono rounded border border-neutral-700"
+              >
+                60s
+              </button>
+              <button
+                onClick={() => startRestTimer(90)}
+                className="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-mono rounded border border-neutral-700"
+              >
+                90s
+              </button>
+              <button
+                onClick={() => startRestTimer(120)}
+                className="px-2 py-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-mono rounded border border-neutral-700"
+              >
+                120s
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Split Header & Action */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-neutral-950 p-6 rounded-2xl border border-neutral-800">
           <div>
             <span className="text-xs uppercase font-bold text-red-400 tracking-wider">Active Protocol</span>
             <h3 className="text-xl sm:text-2xl font-black text-white mt-0.5">{currentSplit.splitName}</h3>
           </div>
-          <div className="flex gap-3 w-full sm:w-auto">
+          <div className="flex flex-wrap gap-3 w-full sm:w-auto">
             <button
               onClick={handleCopyRoutine}
-              className="flex-1 sm:flex-none px-5 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs sm:text-sm font-semibold rounded-xl transition-colors border border-neutral-700"
+              className="flex-1 sm:flex-none px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs sm:text-sm font-semibold rounded-xl transition-colors border border-neutral-700"
             >
-              {copied ? "✓ Copied!" : "📋 Copy Full Routine"}
+              {copied ? "✓ Copied!" : "📋 Copy Routine"}
+            </button>
+            <button
+              onClick={handleDownloadRoutine}
+              className="flex-1 sm:flex-none px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs sm:text-sm font-semibold rounded-xl transition-colors border border-neutral-700"
+            >
+              💾 Save TXT
             </button>
             <a
               href="#contact"
@@ -304,3 +403,4 @@ export default function WorkoutGenerator() {
     </section>
   );
 }
+
