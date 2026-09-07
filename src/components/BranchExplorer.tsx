@@ -1,32 +1,79 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { branchesData, Branch } from "@/data/branches";
 
 export default function BranchExplorer() {
   const [activeBranchId, setActiveBranchId] = useState<string>("f8");
+  const [selectedAmenityFilter, setSelectedAmenityFilter] = useState<string>("ALL");
 
-  const activeBranch = branchesData.find((b) => b.id === activeBranchId) || branchesData[0];
+  const amenityFilters = [
+    { id: "ALL", label: "All Amenities" },
+    { id: "Ladies", label: "Ladies Only Floor" },
+    { id: "Sauna", label: "Sauna & Steam" },
+    { id: "CrossFit", label: "CrossFit & Turf" },
+    { id: "Smoothie", label: "Smoothie Bar" },
+    { id: "Valet", label: "Valet Parking" },
+  ];
+
+  const filteredBranches = useMemo(() => {
+    if (selectedAmenityFilter === "ALL") return branchesData;
+    return branchesData.filter((b) =>
+      b.keyFeatures.some((feat) =>
+        feat.toLowerCase().includes(selectedAmenityFilter.toLowerCase())
+      )
+    );
+  }, [selectedAmenityFilter]);
+
+  const activeBranch =
+    filteredBranches.find((b) => b.id === activeBranchId) ||
+    filteredBranches[0] ||
+    branchesData[0];
 
   return (
     <section id="branches" className="py-24 bg-[#080808] text-white relative overflow-hidden border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-red-950/80 text-red-400 border border-red-800/50 mb-4">
-            3 Locations Across Islamabad
+            3 Flagship Locations Across Islamabad
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight font-display">
             Explore Our <span className="text-red-500">Premium Branches</span>
           </h2>
-          <p className="mt-4 text-neutral-400 text-base sm:text-lg">
-            Find your nearest club, inspect peak training hours, and book a tour or personal training session.
+          <p className="mt-4 text-neutral-400 text-base sm:text-lg font-body">
+            Find your nearest club, check live crowd density, and book an instant branch tour.
           </p>
+        </div>
+
+        {/* Amenity Filter Tags */}
+        <div className="flex flex-wrap justify-center items-center gap-2 mb-8">
+          <span className="text-xs text-neutral-400 font-semibold uppercase tracking-wider mr-2">Filter By:</span>
+          {amenityFilters.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => {
+                setSelectedAmenityFilter(filter.id);
+                const matching = branchesData.find((b) =>
+                  filter.id === "ALL" ? true : b.keyFeatures.some((f) => f.toLowerCase().includes(filter.id.toLowerCase()))
+                );
+                if (matching) setActiveBranchId(matching.id);
+              }}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 border ${
+                selectedAmenityFilter === filter.id
+                  ? "bg-red-600/30 border-red-500 text-red-300 shadow-sm shadow-red-500/20"
+                  : "bg-neutral-900/80 border-neutral-800 text-neutral-400 hover:text-neutral-200 hover:border-neutral-700"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
         </div>
 
         {/* Branch Selector Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {branchesData.map((branch) => {
-            const isSelected = branch.id === activeBranchId;
+            const isSelected = branch.id === activeBranch.id;
+            const isMatch = filteredBranches.some((fb) => fb.id === branch.id);
             return (
               <button
                 key={branch.id}
@@ -34,7 +81,9 @@ export default function BranchExplorer() {
                 className={`px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-300 flex items-center gap-3 border ${
                   isSelected
                     ? "bg-red-600 border-red-500 text-white shadow-xl shadow-red-600/30 scale-105"
-                    : "bg-neutral-900/90 border-neutral-800 text-neutral-300 hover:border-neutral-700 hover:text-white"
+                    : isMatch
+                    ? "bg-neutral-900/90 border-neutral-800 text-neutral-300 hover:border-neutral-700 hover:text-white"
+                    : "bg-neutral-950/60 border-neutral-900 text-neutral-500 opacity-60"
                 }`}
               >
                 <span>📍 {branch.name}</span>
@@ -61,7 +110,7 @@ export default function BranchExplorer() {
               </div>
 
               <div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">{activeBranch.name}</h3>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-display">{activeBranch.name}</h3>
                 <p className="text-sm text-neutral-400 mt-2 flex items-start gap-2">
                   <span className="text-red-500 text-base">📌</span>
                   {activeBranch.address}
@@ -106,7 +155,15 @@ export default function BranchExplorer() {
                   rel="noopener noreferrer"
                   className="px-5 py-3 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-sm font-semibold rounded-xl transition-colors flex items-center gap-2 border border-neutral-700"
                 >
-                  🗺️ Open in Google Maps
+                  🗺️ Google Maps
+                </a>
+                <a
+                  href={`https://wa.me/923000000000?text=${encodeURIComponent(`Hi Power Fitness Zone, I would like to inquire about training at ${activeBranch.name}!`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3 bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-emerald-700/25"
+                >
+                  💬 WhatsApp Branch
                 </a>
                 <a
                   href={`tel:${activeBranch.phone.replace(/[^0-9+]/g, "")}`}
@@ -125,12 +182,16 @@ export default function BranchExplorer() {
                     <span className="w-2.5 h-5 bg-red-500 rounded-full inline-block" />
                     Live Floor Traffic & Peak Times
                   </h4>
-                  <span className="text-xs text-neutral-400">Typical Weekly Pattern</span>
+                  <span className="text-xs text-neutral-400">Typical Pattern</span>
                 </div>
 
-                <p className="text-xs text-neutral-400 mt-4 mb-6">
-                  Plan your training sessions during off-peak hours for immediate rack availability, or train during peak energy sessions!
-                </p>
+                <div className="mt-4 mb-5 p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 flex items-center gap-3">
+                  <span className="text-xl">⚡</span>
+                  <div className="text-xs">
+                    <span className="text-emerald-400 font-bold block">Smart Training Insight</span>
+                    <span className="text-neutral-400">Train before 5:00 PM for maximum rack and trainer availability.</span>
+                  </div>
+                </div>
 
                 <div className="space-y-4">
                   {activeBranch.crowdLevels.map((slot, i) => (
@@ -164,8 +225,11 @@ export default function BranchExplorer() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-400">
+              <div className="mt-8 pt-6 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-400">
                 <span>Multi-branch pass holders can access all 3 locations anytime.</span>
+                <a href="#contact" className="text-red-400 hover:text-red-300 font-semibold underline">
+                  Request Branch Tour →
+                </a>
               </div>
             </div>
           </div>
@@ -174,3 +238,4 @@ export default function BranchExplorer() {
     </section>
   );
 }
+
