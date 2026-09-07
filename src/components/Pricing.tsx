@@ -69,8 +69,23 @@ export default function Pricing() {
             Zero hidden maintenance charges. Cancel anytime or commit longer to unlock up to 25% annual savings.
           </p>
 
+          {/* Money Back & No Lock-In Guarantee Badges */}
+          <div className="flex flex-wrap justify-center items-center gap-4 mt-6 text-xs text-neutral-600 font-semibold font-body">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              7-Day Full Money-Back Guarantee
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 text-neutral-700 border border-neutral-200">
+              <span className="w-2 h-2 rounded-full bg-brand-red" />
+              No Hidden Locker or Registration Fees
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+              ⚡ Multi-Branch Access Across Islamabad
+            </span>
+          </div>
+
           {/* 3-Way Billing Toggle */}
-          <div className="inline-flex items-center p-1.5 rounded-2xl bg-neutral-200/80 border border-neutral-300 mt-8">
+          <div className="inline-flex items-center p-1.5 rounded-2xl bg-neutral-200/80 border border-neutral-300 mt-6">
             <button
               onClick={() => setBillingCycle("monthly")}
               className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${
