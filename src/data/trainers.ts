@@ -5,6 +5,9 @@ export interface Trainer {
   bio: string;
   image: string;
   certifications: string[];
+  experienceYears: number;
+  clientsTrained: string;
+  rating: number;
 }
 
 export const trainers: Trainer[] = [
@@ -15,6 +18,9 @@ export const trainers: Trainer[] = [
     bio: "NSCA-certified strength coach with 12 years of experience. Former national-level powerlifter who has coached over 200 athletes to competition readiness.",
     image: "/images/trainer-ahmed.jpg",
     certifications: ["NSCA-CSCS", "USA Weightlifting L2"],
+    experienceYears: 12,
+    clientsTrained: "250+",
+    rating: 4.9,
   },
   {
     id: "sara",
@@ -23,6 +29,9 @@ export const trainers: Trainer[] = [
     bio: "ACE-certified group fitness specialist who brings infectious energy to every session. Specializes in metabolic conditioning and fat-loss transformations.",
     image: "/images/trainer-sara.jpg",
     certifications: ["ACE-GFI", "Precision Nutrition L1"],
+    experienceYears: 7,
+    clientsTrained: "180+",
+    rating: 5.0,
   },
   {
     id: "bilal",
@@ -31,6 +40,9 @@ export const trainers: Trainer[] = [
     bio: "Professional boxing coach and former amateur champion. Brings discipline, technique, and relentless intensity to every session on the pads.",
     image: "/images/trainer-bilal.jpg",
     certifications: ["PBF Boxing Coach L3", "First Aid Certified"],
+    experienceYears: 9,
+    clientsTrained: "150+",
+    rating: 4.9,
   },
   {
     id: "nadia",
@@ -39,6 +51,9 @@ export const trainers: Trainer[] = [
     bio: "500-hour RYT with a background in sports physiotherapy. Helps athletes and desk workers alike unlock movement and reduce chronic pain.",
     image: "/images/trainer-nadia.jpg",
     certifications: ["RYT-500", "FRC Mobility Specialist"],
+    experienceYears: 6,
+    clientsTrained: "210+",
+    rating: 4.8,
   },
   {
     id: "omar",
@@ -47,6 +62,9 @@ export const trainers: Trainer[] = [
     bio: "CrossFit L2 trainer and movement specialist. Designs programs that translate gym strength into real-world performance and injury resilience.",
     image: "/images/trainer-omar.jpg",
     certifications: ["CrossFit L2", "NASM-CPT"],
+    experienceYears: 8,
+    clientsTrained: "190+",
+    rating: 4.9,
   },
   {
     id: "zara",
@@ -55,6 +73,9 @@ export const trainers: Trainer[] = [
     bio: "Certified personal trainer passionate about creating safe, empowering training environments. Specializes in body recomposition and hormone-aware programming.",
     image: "/images/trainer-zara.jpg",
     certifications: ["ISSA-CPT", "Precision Nutrition L2"],
+    experienceYears: 5,
+    clientsTrained: "140+",
+    rating: 5.0,
   },
   {
     id: "kamran",
@@ -63,5 +84,8 @@ export const trainers: Trainer[] = [
     bio: "Registered dietitian and certified sports nutritionist with 8 years of experience. Has helped over 300 clients achieve their body composition goals through data-driven nutrition strategies.",
     image: "/images/trainer-kamran.jpg",
     certifications: ["RD", "ISSN-SNS", "Precision Nutrition L2"],
+    experienceYears: 8,
+    clientsTrained: "300+",
+    rating: 4.9,
   },
 ];
