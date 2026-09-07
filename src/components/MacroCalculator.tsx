@@ -467,10 +467,15 @@ Website: powerfitnesszone.pk | Islamabad Branches: F-7, Blue Area, Bahria, DHA I
               </div>
 
               {/* Pakistani Whole Food Equivalent Breakdown */}
-              <div className="mt-6 p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-2">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block">
-                  🇵🇰 Pakistani Whole Food Equivalents:
-                </span>
+              <div className="mt-6 p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block">
+                    🇵🇰 Pakistani Whole Food Equivalents:
+                  </span>
+                  <span className="text-[10px] text-red-400 font-mono">
+                    {(macros.proteinGrams / weightKg).toFixed(1)}g Protein / kg
+                  </span>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                   <div className="bg-neutral-900 p-2.5 rounded-lg border border-neutral-800">
                     <span className="text-neutral-400 block text-[10px]">Chicken Breast</span>
@@ -483,6 +488,35 @@ Website: powerfitnesszone.pk | Islamabad Branches: F-7, Blue Area, Bahria, DHA I
                   <div className="bg-neutral-900 p-2.5 rounded-lg border border-neutral-800">
                     <span className="text-neutral-400 block text-[10px]">Basmati Rice</span>
                     <span className="font-bold text-amber-300">~{riceCookedGrams}g cooked</span>
+                  </div>
+                </div>
+
+                {/* 4-Meal Daily Breakdown Guide */}
+                <div className="pt-2 border-t border-neutral-800/80">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-2">
+                    🍽️ 4-Meal Daily Macro Split:
+                  </span>
+                  <div className="grid grid-cols-4 gap-1.5 text-[11px] text-center">
+                    <div className="bg-neutral-900/90 p-2 rounded-lg border border-neutral-800">
+                      <span className="text-neutral-500 block text-[9px] uppercase font-bold">Breakfast</span>
+                      <span className="text-white font-mono font-bold block">{Math.round(macros.totalCalories * 0.25)} kcal</span>
+                      <span className="text-red-400 text-[10px] font-mono">{Math.round(macros.proteinGrams * 0.25)}g P</span>
+                    </div>
+                    <div className="bg-neutral-900/90 p-2 rounded-lg border border-neutral-800">
+                      <span className="text-neutral-500 block text-[9px] uppercase font-bold">Lunch</span>
+                      <span className="text-white font-mono font-bold block">{Math.round(macros.totalCalories * 0.35)} kcal</span>
+                      <span className="text-red-400 text-[10px] font-mono">{Math.round(macros.proteinGrams * 0.35)}g P</span>
+                    </div>
+                    <div className="bg-neutral-900/90 p-2 rounded-lg border border-neutral-800">
+                      <span className="text-neutral-500 block text-[9px] uppercase font-bold">Pre/Post</span>
+                      <span className="text-white font-mono font-bold block">{Math.round(macros.totalCalories * 0.2)} kcal</span>
+                      <span className="text-red-400 text-[10px] font-mono">{Math.round(macros.proteinGrams * 0.2)}g P</span>
+                    </div>
+                    <div className="bg-neutral-900/90 p-2 rounded-lg border border-neutral-800">
+                      <span className="text-neutral-500 block text-[9px] uppercase font-bold">Dinner</span>
+                      <span className="text-white font-mono font-bold block">{Math.round(macros.totalCalories * 0.2)} kcal</span>
+                      <span className="text-red-400 text-[10px] font-mono">{Math.round(macros.proteinGrams * 0.2)}g P</span>
+                    </div>
                   </div>
                 </div>
               </div>
