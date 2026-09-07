@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { transformationsData } from "@/data/transformations";
 
-type FilterCategory = "all" | "fat-loss" | "muscle-gain" | "recomp";
+type FilterCategory = "all" | "fat-loss" | "muscle-gain" | "recomp" | "powerlifting";
 
 export default function Transformations() {
   const [selectedFilter, setSelectedFilter] = useState<FilterCategory>("all");
@@ -23,10 +23,10 @@ export default function Transformations() {
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-red-950/80 text-red-400 border border-red-800/50 mb-4">
             Real Proof • Real People
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight font-display">
             Member <span className="text-red-500">Transformations</span>
           </h2>
-          <p className="mt-4 text-neutral-400 text-base sm:text-lg">
+          <p className="mt-4 text-neutral-400 text-base sm:text-lg font-body">
             Witness the discipline, consistency, and life-changing health outcomes forged inside Power Fitness Zone.
           </p>
 
@@ -37,6 +37,7 @@ export default function Transformations() {
               { id: "fat-loss", label: "🔥 Fat Loss" },
               { id: "muscle-gain", label: "💪 Hypertrophy" },
               { id: "recomp", label: "⚡ Recomposition" },
+              { id: "powerlifting", label: "🏋️ Powerlifting" },
             ].map((tab) => (
               <button
                 key={tab.id}

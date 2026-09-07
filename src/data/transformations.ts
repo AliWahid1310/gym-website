@@ -3,7 +3,7 @@ export interface Transformation {
   name: string;
   age: number;
   profession: string;
-  category: "fat-loss" | "muscle-gain" | "recomp";
+  category: "fat-loss" | "muscle-gain" | "recomp" | "powerlifting";
   categoryLabel: string;
   duration: string;
   trainer: string;
@@ -84,5 +84,39 @@ export const transformationsData: Transformation[] = [
     quote: "Coach Zoya designed a postpartum safe, high-energy strength routine. The private women-friendly studio hours gave me the comfort and focus I needed.",
     program: "Core Rebuild & Metabolic Burn",
     highlights: ["Full diastasis recti recovery", "10,000 steps + 4 gym sessions weekly", "Healthy, sustainable nutrition"],
+  },
+  {
+    id: "t5",
+    name: "Usman Ghani",
+    age: 29,
+    profession: "Financial Analyst",
+    category: "powerlifting",
+    categoryLabel: "Powerlifting Strength",
+    duration: "32 Weeks",
+    trainer: "Ahmed Khan",
+    startingWeight: "82 kg",
+    currentWeight: "85 kg",
+    achievement: "+110 kg Total Lift PR",
+    keyMetric: "220 kg Deadlift Club",
+    quote: "Coach Ahmed perfected my hip hinge mechanics and bar path. I went from chronic lower back twinges to pulling double bodyweight safely.",
+    program: "Competitive Powerlifting Periodization",
+    highlights: ["Squat: 120kg → 180kg", "Bench Press: 85kg → 130kg", "Deadlift: 140kg → 220kg"],
+  },
+  {
+    id: "t6",
+    name: "Mariam Baig",
+    age: 42,
+    profession: "School Principal",
+    category: "recomp",
+    categoryLabel: "Mobility & Strength Rebuild",
+    duration: "26 Weeks",
+    trainer: "Nadia Hussain",
+    startingWeight: "74 kg",
+    currentWeight: "65 kg",
+    achievement: "-9 kg Fat, Pain Free Knee",
+    keyMetric: "Full Squat Depth Restored",
+    quote: "After knee surgery, I feared heavy weights. Nadia's joint mobility progressions and strength rehab gave me my active life back.",
+    program: "Mobility & Hypertrophy Longevity",
+    highlights: ["Ran first 5K in 10 years", "Zero knee inflammation", "4 sessions of guided mobility weekly"],
   },
 ];
