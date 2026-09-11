@@ -267,16 +267,29 @@ export default function DesiGymRecipes() {
                   </span>
                 </div>
 
-                <button
-                  onClick={() => {
-                    setActiveRecipe(recipe);
-                    setPortions(1);
-                  }}
-                  className="w-full py-2.5 rounded-xl bg-zinc-800 hover:bg-emerald-600 text-white font-semibold text-xs transition flex items-center justify-center gap-2 group-hover:bg-emerald-600"
-                >
-                  <ChefHat className="w-4 h-4" />
-                  View Recipe & Cook Prep
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => {
+                      setActiveRecipe(recipe);
+                      setPortions(1);
+                    }}
+                    className="flex-1 py-2.5 rounded-xl bg-zinc-800 hover:bg-emerald-600 text-white font-semibold text-xs transition flex items-center justify-center gap-2 group-hover:bg-emerald-600"
+                  >
+                    <ChefHat className="w-4 h-4" />
+                    View Recipe
+                  </button>
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(
+                      `Check out this high-protein gym meal from Power Fitness Zone: ${recipe.title} (${recipe.proteinG}g Protein, ${recipe.calories} kcal, Rs. ${recipe.costPkr})! https://powerfitzone.com`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Share ${recipe.title} recipe on WhatsApp`}
+                    className="px-3 py-2.5 rounded-xl bg-zinc-800/80 hover:bg-emerald-700 text-white text-xs transition flex items-center justify-center"
+                  >
+                    💬
+                  </a>
+                </div>
               </div>
             </div>
           ))}
