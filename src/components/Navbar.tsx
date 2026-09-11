@@ -75,10 +75,10 @@ export default function Navbar() {
         <a
           href="#"
           className="flex items-center gap-2 shrink-0 transition-transform duration-300 hover:scale-105 font-display text-2xl md:text-3xl font-black tracking-tight"
-          aria-label="360 Fitness — Home"
+          aria-label="Power Fitness Zone — Home"
         >
-          <span className="bg-brand-red text-white px-2 py-0.5 transform -skew-x-12 inline-block font-bold">360</span>
-          <span className="text-white tracking-widest">FITNESS</span>
+          <span className="bg-brand-red text-white px-2 py-0.5 transform -skew-x-12 inline-block font-bold">POWER</span>
+          <span className="text-white tracking-wide">FITNESS ZONE</span>
         </a>
 
         {/* Desktop Nav Links */}
