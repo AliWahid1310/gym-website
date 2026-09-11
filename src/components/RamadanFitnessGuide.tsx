@@ -310,6 +310,24 @@ export default function RamadanFitnessGuide() {
               </div>
             ))}
           </div>
+
+          {/* Action Bar */}
+          <div className="mt-10 p-6 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+              <h4 className="text-white font-bold text-sm">Save This Ramadan Training Routine</h4>
+              <p className="text-xs text-neutral-400 mt-0.5">Keep your timing windows and hydration schedule on your phone.</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://wa.me/923001234567?text=Hi%20Power%20Fitness%20Zone!%20Please%20send%20me%20the%20complete%20Ramadan%20Gym%20Schedule%20and%20Timings%20for%20Islamabad%20branches."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-900/30"
+              >
+                <span>💬 WhatsApp Ramadan Timings</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
