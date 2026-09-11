@@ -54,6 +54,35 @@ export default function Transformations() {
           </div>
         </div>
 
+        {/* Interactive Goal Timeframe Estimator */}
+        <div className="mb-12 bg-gradient-to-r from-neutral-900 via-neutral-900/90 to-neutral-950 border border-neutral-800 rounded-3xl p-6 sm:p-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-red-400 block mb-1">Interactive Transformation Estimator</span>
+              <h3 className="text-xl font-bold text-white">How long will your transformation take?</h3>
+              <p className="text-xs sm:text-sm text-neutral-400 mt-1">
+                Based on historical data from 500+ Power Fitness Zone members under structured coaching.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+              <a
+                href="https://wa.me/923001234567?text=Hi%20Power%20Fitness%20Zone!%20I%20want%20to%20consult%20a%20coach%20about%20starting%20my%20transformation%20journey."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-2 shadow-lg shadow-emerald-900/30"
+              >
+                <span>💬 WhatsApp Consultation</span>
+              </a>
+              <a
+                href="#lead-form"
+                className="px-5 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold transition-all shadow-lg shadow-red-600/30"
+              >
+                Book Free Trial
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredItems.map((item) => (
@@ -116,15 +145,17 @@ export default function Transformations() {
               </div>
 
               {/* Card Footer */}
-              <div className="pt-4 border-t border-neutral-800/70 flex items-center justify-between">
+              <div className="pt-4 border-t border-neutral-800/70 flex flex-wrap items-center justify-between gap-3">
                 <span className="text-xs text-neutral-500">
                   Program: <strong className="text-neutral-300 font-semibold">{item.program}</strong>
                 </span>
                 <a
-                  href="#contact"
-                  className="text-xs font-bold text-red-400 hover:text-red-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                  href={`https://wa.me/923001234567?text=Hi%20Power%20Fitness%20Zone!%20I%20am%20interested%20in%20a%20plan%20similar%20to%20${encodeURIComponent(item.name)}%27s%20${encodeURIComponent(item.categoryLabel)}%20journey.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition-colors"
                 >
-                  Start Your Journey →
+                  Ask About This Plan →
                 </a>
               </div>
             </div>
@@ -138,7 +169,7 @@ export default function Transformations() {
             <p className="text-sm text-neutral-400 mt-1">Book your free body composition assessment & consult a senior coach today.</p>
           </div>
           <a
-            href="#contact"
+            href="#lead-form"
             className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-red-600/30 transition-all shrink-0"
           >
             Claim Free Assessment
