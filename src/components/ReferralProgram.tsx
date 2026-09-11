@@ -105,6 +105,39 @@ export default function ReferralProgram() {
           </p>
         </div>
 
+        {/* 3-Step Referral Process Guide */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+          <div className="bg-neutral-900/60 border border-neutral-800/80 p-6 rounded-2xl flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/40 text-red-400 flex items-center justify-center font-bold text-lg shrink-0">
+              1
+            </div>
+            <div>
+              <h4 className="font-bold text-white text-sm">Create Your Pass</h4>
+              <p className="text-xs text-neutral-400 mt-1">Enter your name to generate your personalized PFZ VIP guest code.</p>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900/60 border border-neutral-800/80 p-6 rounded-2xl flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/40 text-red-400 flex items-center justify-center font-bold text-lg shrink-0">
+              2
+            </div>
+            <div>
+              <h4 className="font-bold text-white text-sm">Send to Friends</h4>
+              <p className="text-xs text-neutral-400 mt-1">Share via WhatsApp. Your friends get a 100% Free 1-Day Pass + 15% discount.</p>
+            </div>
+          </div>
+
+          <div className="bg-neutral-900/60 border border-neutral-800/80 p-6 rounded-2xl flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center font-bold text-lg shrink-0">
+              3
+            </div>
+            <div>
+              <h4 className="font-bold text-white text-sm">Earn Free Months</h4>
+              <p className="text-xs text-neutral-400 mt-1">When they join, your next month&apos;s dues and bonus PT sessions are instantly credited.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Milestone Progress Bar */}
         <div className="mb-12 bg-neutral-900/60 border border-neutral-800 p-6 rounded-3xl backdrop-blur-sm max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-3">
