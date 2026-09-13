@@ -306,9 +306,38 @@ export default function Pricing() {
           </div>
         )}
 
+        {/* Optional Add-on Personal Training Sessions */}
+        <div className="mt-8 max-w-5xl mx-auto rounded-2xl bg-neutral-100 border border-neutral-300/80 p-5 sm:p-6 text-brand-black flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div className="text-left">
+            <div className="flex items-center gap-2">
+              <span className="text-brand-red text-lg">🏋️‍♂️</span>
+              <span className="font-display font-bold uppercase text-sm sm:text-base text-brand-black">
+                Add 1-on-1 Certified Personal Training
+              </span>
+              <span className="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full border border-emerald-300">
+                Custom Nutrition Included
+              </span>
+            </div>
+            <p className="text-neutral-600 text-xs sm:text-sm mt-1">
+              Accelerate progress with dedicated form correction, weekly weigh-ins, and personalized progressive overload plans.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <a
+              href="https://wa.me/923001234567?text=Hi%20PowerFitnessZone%2C%20I%20would%20like%20to%20inquire%20about%20personal%20training%20add-on%20packages%20and%20rates."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-black hover:bg-brand-red text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+            >
+              <span>Inquire PT Rates</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
         {/* Student & Corporate Discount Banner */}
         <div
-          className={`mt-14 max-w-5xl mx-auto rounded-2xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-1000 ${
+          className={`mt-6 max-w-5xl mx-auto rounded-2xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -326,7 +355,9 @@ export default function Pricing() {
             </div>
           </div>
           <a
-            href="#contact"
+            href="https://wa.me/923001234567?text=Hi%20PowerFitnessZone%2C%20I%20am%20interested%20in%20the%20student%2Fcorporate%20group%20discount%20rate."
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-shrink-0 px-6 py-3 rounded-lg border border-neutral-700 bg-neutral-800 text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#D91E2A] hover:border-[#D91E2A] transition-all"
           >
             Inquire Group Rate
