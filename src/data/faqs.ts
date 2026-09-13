@@ -76,4 +76,32 @@ export const faqs: FAQItem[] = [
     answer:
       "We offer electronic RFID lockers, luxury rain showers, traditional Finnish sauna, steam rooms, cold plunge, and medical-grade air filtration.",
   },
+  {
+    id: "faq-11",
+    category: "Membership",
+    question: "Can I bring a guest or workout partner with my membership?",
+    answer:
+      "Elite VIP members receive 2 complimentary guest day passes per month. Pro members can also purchase discounted single-session passes for friends or family.",
+  },
+  {
+    id: "faq-12",
+    category: "Ladies",
+    question: "What are the certifications of female trainers in the ladies section?",
+    answer:
+      "Our female coaching team holds internationally recognized credentials including ACE, ISSA, and REPs certifications specializing in women's strength, prenatal/postnatal fitness, and weight management.",
+  },
+  {
+    id: "faq-13",
+    category: "Training",
+    question: "Do you offer tailored diet plans and supplement guidance?",
+    answer:
+      "Yes! Our certified sports nutritionists design culturally tailored Pakistani meal plans (including halal high-protein desi diets) with customized calorie and macronutrient breakdowns for fat loss or lean bulk.",
+  },
+  {
+    id: "faq-14",
+    category: "Facilities",
+    question: "Are lockers available for daily workout use or permanent rental?",
+    answer:
+      "All members get free access to daily digital RFID lockers during their workout session. Monthly dedicated private locker rentals are also available upon request at reception.",
+  },
 ];
