@@ -25,6 +25,7 @@ interface BookingRecord {
 export default function Schedule() {
   const [selectedDay, setSelectedDay] = useState<Day>("Monday");
   const [selectedCategory, setSelectedCategory] = useState<ClassCategory>("all");
+  const [timeFilter, setTimeFilter] = useState<"all" | "morning" | "evening">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [bookingClass, setBookingClass] = useState<ClassSession | null>(null);
   const [bookedSuccess, setBookedSuccess] = useState(false);
@@ -64,14 +65,28 @@ export default function Schedule() {
 
   const filteredClasses = schedule[selectedDay].filter((cls) => {
     const matchesCategory = selectedCategory === "all" || cls.category === selectedCategory;
+    const isMorning = cls.time.toUpperCase().includes("AM");
+    const matchesTime =
+      timeFilter === "all" ||
+      (timeFilter === "morning" && isMorning) ||
+      (timeFilter === "evening" && !isMorning);
     const query = searchQuery.toLowerCase().trim();
     const matchesSearch =
       !query ||
       cls.name.toLowerCase().includes(query) ||
       cls.instructor.toLowerCase().includes(query) ||
       cls.time.toLowerCase().includes(query);
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesTime && matchesSearch;
   });
+
+  const getGoogleCalendarUrl = (cls: { name: string; day: string; time: string; instructor: string; duration: string }) => {
+    const title = encodeURIComponent(`🏋️ ${cls.name} at Power Fitness Zone`);
+    const details = encodeURIComponent(
+      `Class reservation with Coach ${cls.instructor} (${cls.duration}).\nDay: ${cls.day} at ${cls.time}.\nRemember your training towel & water bottle!`
+    );
+    const location = encodeURIComponent("Power Fitness Zone Islamabad");
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}`;
+  };
 
   const isAlreadyBooked = (classId: string) => {
     return myBookings.some((b) => b.id === `${selectedDay}-${classId}`);
@@ -212,22 +227,52 @@ export default function Schedule() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          {/* Category Tabs */}
-          <div className="flex gap-1.5 overflow-x-auto scrollbar-hide py-1">
-            {categories.map((cat) => (
+          {/* Category & Time Tabs */}
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex gap-1.5 overflow-x-auto scrollbar-hide py-1">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`px-4 sm:px-5 py-2.5 text-xs font-semibold uppercase tracking-wider font-body whitespace-nowrap rounded-lg transition-all duration-300 ${
+                    selectedCategory === cat.id
+                      ? "text-white bg-brand-red shadow-md shadow-brand-red/30"
+                      : "text-brand-black/70 bg-white hover:text-brand-black hover:bg-neutral-200/70 border border-neutral-200"
+                  }`}
+                  aria-pressed={selectedCategory === cat.id}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Time of Day Segment */}
+            <div className="flex items-center bg-white border border-neutral-200 rounded-lg p-1 text-[11px] font-bold uppercase tracking-wider">
               <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 sm:px-5 py-2.5 text-xs font-semibold uppercase tracking-wider font-body whitespace-nowrap rounded-lg transition-all duration-300 ${
-                  selectedCategory === cat.id
-                    ? "text-white bg-brand-red shadow-md shadow-brand-red/30"
-                    : "text-brand-black/70 bg-white hover:text-brand-black hover:bg-neutral-200/70 border border-neutral-200"
+                onClick={() => setTimeFilter("all")}
+                className={`px-2.5 py-1 rounded transition-colors ${
+                  timeFilter === "all" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-black"
                 }`}
-                aria-pressed={selectedCategory === cat.id}
               >
-                {cat.label}
+                All Day
               </button>
-            ))}
+              <button
+                onClick={() => setTimeFilter("morning")}
+                className={`px-2.5 py-1 rounded transition-colors ${
+                  timeFilter === "morning" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-black"
+                }`}
+              >
+                🌅 Morning
+              </button>
+              <button
+                onClick={() => setTimeFilter("evening")}
+                className={`px-2.5 py-1 rounded transition-colors ${
+                  timeFilter === "evening" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-black"
+                }`}
+              >
+                🌙 Evening
+              </button>
+            </div>
           </div>
 
           {/* Quick Search */}
@@ -589,6 +634,20 @@ export default function Schedule() {
                   </div>
 
                   <div className="flex flex-col gap-2.5">
+                    <a
+                      href={getGoogleCalendarUrl({
+                        name: bookingClass.name,
+                        day: selectedDay,
+                        time: bookingClass.time,
+                        instructor: bookingClass.instructor,
+                        duration: bookingClass.duration,
+                      })}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md shadow-blue-600/30 flex items-center justify-center gap-2"
+                    >
+                      🗓️ Add to Google Calendar (1-Tap)
+                    </a>
                     <button
                       onClick={() =>
                         downloadIcsCalendar({
