@@ -13,7 +13,10 @@ import {
   Sparkles,
   Flame,
   Calendar,
-  Layers
+  Layers,
+  Timer,
+  Download,
+  RotateCcw
 } from "lucide-react";
 
 interface ExerciseSet {
@@ -54,6 +57,54 @@ export default function WorkoutLogger() {
   const [workoutDate, setWorkoutDate] = useState<string>(new Date().toISOString().split("T")[0]);
   const [copied, setCopied] = useState<boolean>(false);
   const [savedSuccess, setSavedSuccess] = useState<boolean>(false);
+  const [restSeconds, setRestSeconds] = useState<number>(0);
+  const [isResting, setIsResting] = useState<boolean>(false);
+
+  // Countdown timer effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null;
+    if (isResting && restSeconds > 0) {
+      interval = setInterval(() => {
+        setRestSeconds((prev) => {
+          if (prev <= 1) {
+            setIsResting(false);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isResting, restSeconds]);
+
+  const handleStartRest = (secs: number) => {
+    setRestSeconds(secs);
+    setIsResting(true);
+  };
+
+  const handleResetRest = () => {
+    setIsResting(false);
+    setRestSeconds(0);
+  };
+
+  const handleExportCSV = () => {
+    const headers = "Date,Exercise,Set,Weight_KG,Reps,RPE,Is_PR\n";
+    const rows = sets
+      .map(
+        (s, idx) =>
+          `"${workoutDate}","${selectedExercise}",${idx + 1},${s.weight},${s.reps},${s.rpe},${s.isPR ? "YES" : "NO"}`
+      )
+      .join("\n");
+    const blob = new Blob([headers + rows], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `Workout-${selectedExercise.replace(/\s+/g, "-")}-${workoutDate}.csv`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
 
   // Load from localStorage on client mount
   useEffect(() => {
@@ -332,6 +383,42 @@ export default function WorkoutLogger() {
             </table>
           </div>
 
+          {/* Rest Timer Bar */}
+          <div className="bg-neutral-900/90 border border-neutral-800 rounded-xl p-3 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <Timer className="w-4 h-4 text-red-500" />
+              <span className="text-xs font-bold uppercase tracking-wider text-neutral-300">
+                Rest Timer:
+              </span>
+              <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
+                isResting ? "bg-red-500 text-white animate-pulse" : "bg-neutral-800 text-neutral-400"
+              }`}>
+                {restSeconds}s
+              </span>
+            </div>
+
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {[30, 60, 90, 120].map((s) => (
+                <button
+                  key={s}
+                  onClick={() => handleStartRest(s)}
+                  className="px-2.5 py-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white rounded-lg text-xs font-medium transition-colors"
+                >
+                  {s}s
+                </button>
+              ))}
+              {isResting && (
+                <button
+                  onClick={handleResetRest}
+                  className="p-1 text-neutral-400 hover:text-white transition-colors"
+                  title="Reset timer"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+          </div>
+
           {/* Add Set & Action Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-neutral-800">
             <button
@@ -342,13 +429,22 @@ export default function WorkoutLogger() {
               Add Working Set
             </button>
 
-            <div className="w-full sm:w-auto flex items-center gap-3">
+            <div className="w-full sm:w-auto flex flex-wrap items-center gap-2 sm:gap-3">
+              <button
+                onClick={handleExportCSV}
+                className="flex-1 sm:flex-initial py-2.5 px-4 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors"
+                title="Export routine to CSV"
+              >
+                <Download className="w-3.5 h-3.5 text-neutral-300" />
+                Export CSV
+              </button>
+
               <button
                 onClick={handleCopyReport}
                 className="flex-1 sm:flex-initial py-2.5 px-4 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors"
               >
                 <Share2 className="w-3.5 h-3.5 text-neutral-300" />
-                {copied ? "Copied to Clipboard!" : "Copy Summary"}
+                {copied ? "Copied!" : "Copy Summary"}
               </button>
 
               <button
@@ -356,7 +452,7 @@ export default function WorkoutLogger() {
                 className="flex-1 sm:flex-initial py-2.5 px-5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs rounded-xl shadow-lg shadow-red-600/30 flex items-center justify-center gap-2 transition-all"
               >
                 <Save className="w-3.5 h-3.5" />
-                {savedSuccess ? "Saved to Storage!" : "Save Workout"}
+                {savedSuccess ? "Saved!" : "Save Workout"}
               </button>
             </div>
           </div>
