@@ -62,6 +62,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    "theme-color": "#D91E2A",
+    "geo.region": "PK-IS",
+    "geo.placename": "Islamabad",
+    "geo.position": "33.6844;73.0479",
+    "ICBM": "33.6844, 73.0479",
+  },
 };
 
 export default function RootLayout({
