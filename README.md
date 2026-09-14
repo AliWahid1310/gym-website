@@ -16,10 +16,9 @@ Designed specifically for modern athletes, lifters, and fitness enthusiasts acro
 - **Strength Standards & SBD Classifier** — Compare compound lifts (Squat, Bench, Deadlift, OHP) against international strength standards and gym ranks.
 - **Progressive Overload & Volume Tracker** — Systematic weekly weight jumps and volume progression manager.
 
-### 💳 Member Experience & Community
-- **Digital Member Pass Wallet** — 3D interactive holographic flip card with contactless NFC badge, simulated turnstile gate check-in scanner (with audio beeps), and branch access status.
-- **Live Multi-Branch Floor & Equipment Radar** — Real-time squat rack availability, sauna status, and floor crowd density across Islamabad facilities.
-- **AI Coach Matcher Quiz** — 4-question intelligent assessment matching lifters to certified personal trainers.
+- **Digital Member Pass Wallet** — 3D interactive holographic flip card with contactless NFC badge, simulated turnstile gate check-in scanner (with Web Audio beeps), JSON digital pass export, and dynamic Islamabad branch selection.
+- **Live Multi-Branch Floor & Equipment Radar** — Real-time squat rack availability, sauna status, floor crowd density across Islamabad facilities, and 1-tap system clock synchronization.
+- **Gym Set Logger & PR Journal** — Log working sets with RPE ratings, calculate total tonnage volume moved (kg), rest interval countdown timer (30s-120s), CSV spreadsheet export, and persistent local storage.
 - **Interactive Membership Plan Finder** — ROI & value comparison calculator for Silver, Gold, and VIP Elite memberships.
 - **Monthly Challenges & Badges** — Leaderboards, community milestone badges, and Islamabad lifter challenges.
 - **Gym Etiquette Guide & Lifter IQ** — Code of conduct and 5-question interactive gym etiquette quiz.
