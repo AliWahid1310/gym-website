@@ -16,6 +16,7 @@ import {
   Download,
   Volume2
 } from "lucide-react";
+import { branchesData } from "@/data/branches";
 
 type MembershipTier = "vip" | "gold" | "silver" | "guest";
 
@@ -35,7 +36,7 @@ const TIERS: Record<MembershipTier, TierDetails> = {
     gradient: "from-amber-600 via-neutral-900 to-red-950",
     borderColor: "border-amber-500/60",
     textColor: "text-amber-400",
-    benefits: ["All 4 Islamabad Branches", "Steam Sauna & Ice Bath", "1-on-1 PT Spotting", "24/7 Access Pass"],
+    benefits: ["All Islamabad Branches", "Recovery Steam & Sauna", "1-on-1 PT Spotting", "24/7 Turnstile Access"],
   },
   gold: {
     name: "Gold All-Access",
@@ -43,7 +44,7 @@ const TIERS: Record<MembershipTier, TierDetails> = {
     gradient: "from-yellow-700 via-neutral-950 to-neutral-900",
     borderColor: "border-yellow-500/50",
     textColor: "text-yellow-400",
-    benefits: ["F-7 & G-11 Dual Access", "Locker Room Included", "Monthly InBody Scan", "Group HIIT & Spin"],
+    benefits: ["F-8 & G-8 Dual Access", "Locker Room Included", "Monthly InBody Scan", "Group HIIT & Spin"],
   },
   silver: {
     name: "Silver Strength",
@@ -66,10 +67,11 @@ const TIERS: Record<MembershipTier, TierDetails> = {
 export default function MemberPassWallet() {
   const [tier, setTier] = useState<MembershipTier>("vip");
   const [memberName, setMemberName] = useState<string>("HAMZA MALIK");
-  const [homeBranch, setHomeBranch] = useState<string>("F-7 Markaz, Islamabad");
+  const [homeBranch, setHomeBranch] = useState<string>(branchesData[0]?.name || "F-8 Markaz Flagship");
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const [scanStatus, setScanStatus] = useState<"idle" | "scanning" | "success">("idle");
   const [copied, setCopied] = useState<boolean>(false);
+  const [downloading, setDownloading] = useState<boolean>(false);
 
   const memberId = "PFZ-ISB-8942";
   const lockerNumber = "L-42";
@@ -108,6 +110,31 @@ export default function MemberPassWallet() {
     navigator.clipboard.writeText(`Power Fitness Zone Member Pass: ${memberName} | ID: ${memberId} | Tier: ${currentTier.name} | Branch: ${homeBranch}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleDownloadPass = () => {
+    setDownloading(true);
+    const passData = {
+      organization: "Power Fitness Zone Islamabad",
+      member: memberName,
+      memberId: memberId,
+      tier: currentTier.name,
+      homeBranch: homeBranch,
+      locker: lockerNumber,
+      validUntil: validUntil,
+      streak: `${workoutStreak} days`,
+      verifiedAt: new Date().toISOString(),
+    };
+    const blob = new Blob([JSON.stringify(passData, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `PFZ-Pass-${memberName.replace(/\s+/g, "-")}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    setTimeout(() => setDownloading(false), 1500);
   };
 
   return (
@@ -329,10 +356,11 @@ export default function MemberPassWallet() {
                 onChange={(e) => setHomeBranch(e.target.value)}
                 className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
               >
-                <option value="F-7 Markaz, Islamabad">F-7 Markaz (Flagship Olympic)</option>
-                <option value="G-11 Markaz, Islamabad">G-11 Markaz (Strength & Cardio Deck)</option>
-                <option value="DHA Phase 2, Islamabad">DHA Phase 2 (Power Zone & Spa)</option>
-                <option value="Bahria Town Phase 7, Rawalpindi">Bahria Town Phase 7 (Elite Complex)</option>
+                {branchesData.map((b) => (
+                  <option key={b.id} value={`${b.name}, ${b.city}`}>
+                    {b.name} ({b.badge})
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -343,14 +371,22 @@ export default function MemberPassWallet() {
                 className="flex-1 py-3 px-4 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 rounded-xl text-xs font-bold text-white flex items-center justify-center gap-2 transition-colors"
               >
                 <Copy className="w-3.5 h-3.5" />
-                {copied ? "Pass Copied!" : "Copy Pass Data"}
+                {copied ? "Pass Copied!" : "Copy Pass"}
+              </button>
+              <button
+                onClick={handleDownloadPass}
+                disabled={downloading}
+                className="flex-1 py-3 px-4 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 rounded-xl text-xs font-bold text-white flex items-center justify-center gap-2 transition-colors"
+              >
+                <Download className="w-3.5 h-3.5 text-red-400" />
+                {downloading ? "Exporting..." : "Download Pass"}
               </button>
               <a
                 href="#pricing"
                 className="flex-1 py-3 px-4 bg-red-600 hover:bg-red-700 rounded-xl text-xs font-bold text-white text-center flex items-center justify-center gap-2 shadow-lg shadow-red-600/30 transition-all"
               >
                 <Zap className="w-3.5 h-3.5" />
-                Upgrade Membership
+                Upgrade
               </a>
             </div>
           </div>
