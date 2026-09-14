@@ -64,6 +64,24 @@ export default function GymLiveTracker() {
   const [selectedBranch, setSelectedBranch] = useState<"i8" | "g11">("i8");
   const [selectedDay, setSelectedDay] = useState<"mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun">("mon");
   const [selectedHour, setSelectedHour] = useState<number>(18); // Default 6 PM peak
+  const [isLiveSynced, setIsLiveSynced] = useState<boolean>(false);
+
+  // Sync to actual system time
+  const handleSyncCurrentTime = () => {
+    const days: ("sun" | "mon" | "tue" | "wed" | "thu" | "fri" | "sat")[] = [
+      "sun", "mon", "tue", "wed", "thu", "fri", "sat"
+    ];
+    const now = new Date();
+    const currentDayKey = days[now.getDay()];
+    const currentHourVal = now.getHours();
+
+    setSelectedDay(currentDayKey);
+    // Hourly data operates between 6 AM and 11 PM
+    const clampedHour = Math.min(Math.max(currentHourVal, 6), 23);
+    setSelectedHour(clampedHour);
+    setIsLiveSynced(true);
+    setTimeout(() => setIsLiveSynced(false), 2500);
+  };
 
   const isWeekend = selectedDay === "sat" || selectedDay === "sun";
   const hourlyData = isWeekend ? WEEKEND_HOURLY_DATA : WEEKDAY_HOURLY_DATA;
@@ -150,30 +168,42 @@ export default function GymLiveTracker() {
             </div>
           </div>
 
-          {/* Day of Week Selector */}
-          <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
-            {[
-              { id: "mon", label: "Mon" },
-              { id: "tue", label: "Tue" },
-              { id: "wed", label: "Wed" },
-              { id: "thu", label: "Thu" },
-              { id: "fri", label: "Fri" },
-              { id: "sat", label: "Sat" },
-              { id: "sun", label: "Sun" },
-            ].map((d) => (
-              <button
-                key={d.id}
-                type="button"
-                onClick={() => setSelectedDay(d.id as any)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                  selectedDay === d.id
-                    ? "bg-white text-black shadow"
-                    : "bg-black/40 text-gray-400 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {d.label}
-              </button>
-            ))}
+          {/* Day of Week Selector & Live Sync */}
+          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+              {[
+                { id: "mon", label: "Mon" },
+                { id: "tue", label: "Tue" },
+                { id: "wed", label: "Wed" },
+                { id: "thu", label: "Thu" },
+                { id: "fri", label: "Fri" },
+                { id: "sat", label: "Sat" },
+                { id: "sun", label: "Sun" },
+              ].map((d) => (
+                <button
+                  key={d.id}
+                  type="button"
+                  onClick={() => setSelectedDay(d.id as any)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                    selectedDay === d.id
+                      ? "bg-white text-black shadow"
+                      : "bg-black/40 text-gray-400 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {d.label}
+                </button>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={handleSyncCurrentTime}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600/20 hover:bg-red-600 border border-red-500/40 text-red-300 hover:text-white text-xs font-bold transition-all shadow-sm"
+              title="Sync to local system day and hour"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{isLiveSynced ? "Synced to Now!" : "Sync Live Time"}</span>
+            </button>
           </div>
         </div>
 
