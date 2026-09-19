@@ -8,6 +8,13 @@ export interface Amenity {
 
 export const amenities: Amenity[] = [
   {
+    id: "amenity-ice-plunge",
+    icon: "🧊",
+    title: "Nordic Contrast Cold Plunge",
+    description: "Sub-5°C purified cold immersion baths designed for accelerated central nervous system recovery and reduced delayed-onset muscle soreness.",
+    tag: "Recovery",
+  },
+  {
     id: "amenity-1",
     icon: "🔥",
     title: "Finnish Steam & Sauna",
