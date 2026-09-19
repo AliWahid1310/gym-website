@@ -125,6 +125,7 @@ export default function Pricing() {
               <span className="text-[10px] bg-white text-brand-red px-1.5 py-0.5 rounded font-black">
                 -25%
               </span>
+            </button>
           </div>
 
           {/* Student & Armed Forces verification toggle */}
