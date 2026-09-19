@@ -11,6 +11,16 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
+    id: "t-daniyal",
+    name: "Daniyal Qureshi",
+    image: "/images/member-daniyal.jpg",
+    memberSince: "Member since 2023",
+    rating: 5,
+    goal: "Strength",
+    branch: "F-7 Islamabad",
+    quote: "Power Fitness Zone changed my entire perspective on powerlifting. Under Coach Ahmed, my deadlift jumped from 180kg to 260kg in 14 months without a single lower-back injury.",
+  },
+  {
     id: "t1",
     name: "Hassan Malik",
     image: "/images/member-hassan.jpg",
