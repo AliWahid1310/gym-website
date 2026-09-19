@@ -14,6 +14,19 @@ export interface EquipmentItem {
 
 export const EQUIPMENT_CATALOG: EquipmentItem[] = [
   {
+    id: "rogue-calibrated-plates",
+    name: "Rogue Calibrated Steel Competition Plates",
+    brand: "Rogue Fitness",
+    category: "free-weights",
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    primaryMuscle: "Full Body Compound Loading",
+    secondaryMuscles: ["Posterior Chain", "Shoulders"],
+    specs: "Precision cast within +/- 10 grams of declared weight, 50mm collar opening, slim width for 400kg+ barbell loading",
+    proFormCue: "Load heaviest discs facing inwards with collar clamped firmly to minimize rotational bar oscillation.",
+    commonMistake: "Leaving fractional collars unpinned on dynamic max effort sets.",
+    highlightBadge: "IPF Certified",
+  },
+  {
     id: "eleiko-power-rack",
     name: "Eleiko IPF Competition Power Racks",
     brand: "Eleiko (Sweden)",
