@@ -60,6 +60,9 @@ export default function WilksCalculator() {
     }
     const denom = a + b * bw + c * Math.pow(bw, 2) + d * Math.pow(bw, 3) + e * Math.pow(bw, 4) + f * Math.pow(bw, 5);
     if (denom <= 0) return 0;
+    return Math.round(((500 / denom) * total) * 100) / 100;
+  };
+
   // IPF GL Points (Official IPF Standard since 2020)
   const calculateIpfGl = (bw: number, total: number, isMale: boolean): number => {
     if (bw <= 30 || total <= 0) return 0;
