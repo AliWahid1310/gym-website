@@ -12,6 +12,17 @@ export interface Trainer {
 
 export const trainers: Trainer[] = [
   {
+    id: "hamza-weightlifting",
+    name: "Hamza Abbasi",
+    specialty: "Olympic Weightlifting & Mobility",
+    bio: "Former Pakistan national weightlifting squad coach with deep expertise in snatch biomechanics, clean & jerk trajectory, and hip mobility rehabilitation.",
+    image: "/images/trainer-hamza.jpg",
+    certifications: ["IWF Level 2 International Coach", "FMS Functional Movement Specialist"],
+    experienceYears: 11,
+    clientsTrained: "210+",
+    rating: 5.0,
+  },
+  {
     id: "ahmed",
     name: "Ahmed Khan",
     specialty: "Strength & Powerlifting",
