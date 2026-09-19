@@ -122,6 +122,13 @@ power-fitness-zone/
 
 ---
 
+## 📅 Changelog & Interactive Suite Updates
+
+- **September 19, 2026**:
+  - **Floor Upgrades**: Added Rogue IPF Calibrated Steel Plates and Nordic Contrast Cold Plunge recovery suite.
+  - **Coaching Staff**: Onboarded IWF certified Olympic Weightlifting Coach Hamza Abbasi to F-7 facility.
+  - **Bugfixes**: Resolved annual billing switch tag hierarchy and Wilks polynomial calculation accuracy.
+
 ## 📅 October 2026 Changelog & Interactive Suite Updates
 
 - **October 5, 2026**:
