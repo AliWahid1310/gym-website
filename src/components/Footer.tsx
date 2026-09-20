@@ -219,7 +219,13 @@ export default function Footer() {
             </div>
 
             <div className="bg-neutral-900/80 p-4 rounded-2xl border border-neutral-800 space-y-2.5 text-xs text-neutral-300">
-              <div className="font-bold text-white text-sm">{activeBranch.name}</div>
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-white text-sm">{activeBranch.name}</span>
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-800/60">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Open Now
+                </span>
+              </div>
               <div>
                 <span className="text-neutral-500 block text-[10px] uppercase">Location</span>
                 <span>{activeBranch.address}</span>
@@ -228,10 +234,20 @@ export default function Footer() {
                 <span className="text-neutral-500 block text-[10px] uppercase">Operating Hours</span>
                 <span className="text-emerald-400 font-medium">{activeBranch.time}</span>
               </div>
-              <div>
-                <span className="text-neutral-500 block text-[10px] uppercase">Direct Helpline</span>
-                <a href={`tel:${activeBranch.phone}`} className="text-red-400 hover:underline font-mono">
-                  {activeBranch.phone}
+              <div className="flex items-center justify-between pt-1">
+                <div>
+                  <span className="text-neutral-500 block text-[10px] uppercase">Direct Helpline</span>
+                  <a href={`tel:${activeBranch.phone}`} className="text-red-400 hover:underline font-mono">
+                    {activeBranch.phone}
+                  </a>
+                </div>
+                <a
+                  href={`https://wa.me/923001234567?text=${encodeURIComponent(`Hi Power Fitness Zone, I would like to inquire about ${activeBranch.name} timings and memberships.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2.5 py-1 bg-emerald-800/80 hover:bg-emerald-700 text-white text-[11px] font-semibold rounded-lg transition-colors inline-flex items-center gap-1"
+                >
+                  <span>💬</span> WhatsApp
                 </a>
               </div>
             </div>
