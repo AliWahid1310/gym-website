@@ -83,7 +83,19 @@ export default function BranchModal() {
           <div className="h-1 w-full bg-brand-red" />
 
           {/* Card */}
-          <div className="bg-[#0f0f0f] border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.8)]">
+          <div className="bg-[#0f0f0f] border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.8)] relative">
+            {/* Close button */}
+            <button
+              onClick={() => {
+                sessionStorage.setItem("pfz_branch", "all");
+                setIsOpen(false);
+              }}
+              className="absolute top-4 right-4 text-white/40 hover:text-white text-lg p-2 transition-colors"
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
+
             {/* Header */}
             <div className="px-8 pt-10 pb-6 border-b border-white/8">
               {/* Logo mark */}
@@ -211,7 +223,17 @@ export default function BranchModal() {
                   ? `Confirm — ${branches.find((b) => b.id === selected)?.name}`
                   : "Select a Branch to Continue"}
               </button>
-              <p className="text-center text-white/25 text-xs font-body mt-4 uppercase tracking-widest">
+              <button
+                type="button"
+                onClick={() => {
+                  sessionStorage.setItem("pfz_branch", "all");
+                  setIsOpen(false);
+                }}
+                className="w-full mt-3 py-2 text-white/50 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors"
+              >
+                Skip for now & Explore All Locations →
+              </button>
+              <p className="text-center text-white/25 text-xs font-body mt-3 uppercase tracking-widest">
                 Islamabad&apos;s Premier Training Facilities
               </p>
             </div>
