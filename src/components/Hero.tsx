@@ -55,11 +55,18 @@ export default function Hero() {
       >
         <div className="max-w-2xl">
           {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-6 reveal" style={{ transitionDelay: "0ms" }}>
+          <div className="flex items-center gap-3 mb-6 reveal flex-wrap" style={{ transitionDelay: "0ms" }}>
             <div className="w-12 h-[2px] bg-brand-red" />
             <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em] font-body">
               Premium Training Facility
             </span>
+            <a
+              href="#branches"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-white/10 hover:bg-white/20 text-neutral-300 border border-white/15 transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
+              Islamabad Flagships: F-8 • G-8 • F-10
+            </a>
           </div>
 
           {/* Headline */}
