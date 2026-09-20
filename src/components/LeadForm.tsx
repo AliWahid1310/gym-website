@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Button from "@/components/ui/Button";
 
@@ -30,6 +30,21 @@ export default function LeadForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [ref, isVisible] = useScrollReveal<HTMLElement>({ threshold: 0.1 });
+
+  useEffect(() => {
+    try {
+      const savedBranch = sessionStorage.getItem("pfz_branch");
+      if (savedBranch === "g8") {
+        setFormData((prev) => ({ ...prev, branch: "G-8 Community Center" }));
+      } else if (savedBranch === "f10") {
+        setFormData((prev) => ({ ...prev, branch: "F-10 Premium Club" }));
+      } else if (savedBranch === "f8") {
+        setFormData((prev) => ({ ...prev, branch: "F-8 Markaz Flagship" }));
+      }
+    } catch {
+      // Ignore sessionStorage exceptions in private browsing
+    }
+  }, []);
 
   function validate(): FormErrors {
     const errs: FormErrors = {};
