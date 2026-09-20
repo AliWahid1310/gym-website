@@ -17,7 +17,8 @@ Designed specifically for modern athletes, lifters, and fitness enthusiasts acro
 - **Progressive Overload & Volume Tracker** — Systematic weekly weight jumps and volume progression manager.
 
 - **Digital Member Pass Wallet** — 3D interactive holographic flip card with contactless NFC badge, simulated turnstile gate check-in scanner (with Web Audio beeps), JSON digital pass export, and dynamic Islamabad branch selection.
-- **Live Multi-Branch Floor & Equipment Radar** — Real-time squat rack availability, sauna status, floor crowd density across Islamabad facilities, and 1-tap system clock synchronization.
+- **Live Multi-Branch Floor & Equipment Radar** — Real-time squat rack availability, sauna status, floor crowd density across Islamabad facilities, 1-tap Google Maps directions link sharing, and 1-tap system clock synchronization.
+- **Smart Branch Onboarding & Lead Routing** — Session-aware branch selection modal with instant skip capability, automatically pre-selecting the member's home branch in the free trial concierge form.
 - **Gym Set Logger & PR Journal** — Log working sets with RPE ratings, calculate total tonnage volume moved (kg), rest interval countdown timer (30s-120s), CSV spreadsheet export, and persistent local storage.
 - **Interactive Membership Plan Finder** — ROI & value comparison calculator for Silver, Gold, and VIP Elite memberships.
 - **Monthly Challenges & Badges** — Leaderboards, community milestone badges, and Islamabad lifter challenges.
