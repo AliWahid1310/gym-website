@@ -6,6 +6,7 @@ import { branchesData, Branch } from "@/data/branches";
 export default function BranchExplorer() {
   const [activeBranchId, setActiveBranchId] = useState<string>("f8");
   const [selectedAmenityFilter, setSelectedAmenityFilter] = useState<string>("ALL");
+  const [copiedMap, setCopiedMap] = useState(false);
 
   const amenityFilters = [
     { id: "ALL", label: "All Amenities" },
@@ -157,6 +158,18 @@ export default function BranchExplorer() {
                 >
                   🗺️ Google Maps
                 </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText(activeBranch.mapUrl);
+                    setCopiedMap(true);
+                    setTimeout(() => setCopiedMap(false), 2000);
+                  }}
+                  className="px-4 py-3 bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white text-sm font-medium rounded-xl transition-all flex items-center gap-2 border border-neutral-800"
+                  title="Copy location link to clipboard"
+                >
+                  {copiedMap ? "✅ Link Copied" : "📋 Copy Link"}
+                </button>
                 <a
                   href={`https://wa.me/923000000000?text=${encodeURIComponent(`Hi Power Fitness Zone, I would like to inquire about training at ${activeBranch.name}!`)}`}
                   target="_blank"
