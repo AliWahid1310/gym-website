@@ -124,6 +124,12 @@ power-fitness-zone/
 
 ## 📅 Changelog & Interactive Suite Updates
 
+- **September 21, 2026**:
+  - **Curriculum**: Added 12-Week Islamabad Powerbuilding Division program.
+  - **Community Leaderboard**: Launched 500KG Raw Total Club with hall-of-fame plaque recognition.
+  - **Pakistani Nutrition**: Indexed grass-fed buffalo paneer and lean beef shami kebabs in macro library.
+  - **Knowledge Base**: Published sleep architecture and endocrine recovery guide.
+
 - **September 19, 2026**:
   - **Floor Upgrades**: Added Rogue IPF Calibrated Steel Plates and Nordic Contrast Cold Plunge recovery suite.
   - **Coaching Staff**: Onboarded IWF certified Olympic Weightlifting Coach Hamza Abbasi to F-7 facility.
