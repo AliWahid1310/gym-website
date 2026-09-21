@@ -15,6 +15,20 @@ export interface PakistaniProteinSource {
 
 export const PAKISTANI_PROTEIN_SOURCES: PakistaniProteinSource[] = [
   {
+    id: "desi-paneer",
+    name: "Fresh Grass-Fed Buffalo Paneer",
+    urduName: "دیسی پنیر",
+    category: "Dairy",
+    servingSize: "250g",
+    proteinPerServing: 45,
+    typicalPricePkr: 320,
+    unit: "250g",
+    proteinPerPkr: 14.06,
+    costPerGramProteinPkr: 7.11,
+    bioavailabilityScore: "0.95 (High Casein/Whey)",
+    dietaryNote: "Slow-digesting night protein rich in conjugated linoleic acid and healthy saturated fats.",
+  },
+  {
     id: "chicken-breast",
     name: "Boneless Chicken Breast",
     urduName: "چکن بون لیس",
