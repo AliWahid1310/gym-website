@@ -15,6 +15,18 @@ export interface Program {
 
 export const programs: Program[] = [
   {
+    id: "powerbuilding-12w",
+    name: "12-Week Islamabad Powerbuilding Division",
+    tagline: "Heavy SBD Compound Progression + Targeted Hypertrophy Volume",
+    description: "Combines competitive powerlifting periodization with high-yield bodybuilding accessories designed for maximum muscle density and raw PRs.",
+    duration: "12 Weeks",
+    intensity: "Advanced",
+    schedule: "5 Days / Week",
+    featured: true,
+    image: "/images/program-powerbuilding.jpg",
+    highlights: ["RPE-based wave periodization", "Calibrated bar speed tracking", "Glute & hamstring hypertrophy specialization", "Weekly coach check-in"],
+  },
+  {
     id: "strength",
     name: "Strength Training",
     description:
