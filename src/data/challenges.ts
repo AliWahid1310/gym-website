@@ -14,6 +14,19 @@ export interface GymChallenge {
 
 export const GYM_CHALLENGES: GymChallenge[] = [
   {
+    id: "500kg-raw-club",
+    title: "Islamabad 500KG Raw Total Club",
+    badge: "🏆",
+    category: "strength",
+    goalTarget: 500,
+    unit: "Total KG",
+    durationDays: 365,
+    reward: "Hall of Fame Wall Plaque & Custom Lifting Singlet",
+    participantsCount: 84,
+    description: "Official SBD total verified on Eleiko calibrated plates with IPF squat depth standards.",
+    difficulty: "Elite",
+  },
+  {
     id: "consistency-30",
     title: "30-Day Iron Consistency",
     badge: "🔥",
