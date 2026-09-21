@@ -15,6 +15,20 @@ export interface MealItem {
 
 export const MEALS_DATA: MealItem[] = [
   {
+    id: "pre-shami",
+    name: "Lean Beef Shami Kebabs with Brown Roti",
+    category: "pre_workout",
+    goal: "bulk",
+    proteinG: 38,
+    carbsG: 52,
+    fatsG: 8,
+    calories: 430,
+    prepTimeMins: 15,
+    ingredients: ["3 Air-Fried Lean Beef Shami Kebabs", "1 Whole Wheat Chapati", "Fresh Mint & Coriander Chutney", "Cucumber slices"],
+    instructions: "Air-fry lean beef shami kebabs without oil. Serve with warm chapati and fresh digestive mint chutney 90 minutes before heavy leg day.",
+    isDesiSpecial: true,
+  },
+  {
     id: "pre-1",
     name: "Desi Egg Whites & Oats Porridge with Banana",
     category: "pre_workout",
