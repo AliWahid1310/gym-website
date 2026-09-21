@@ -15,6 +15,27 @@ export interface Article {
 
 export const articlesData: Article[] = [
   {
+    id: "sleep-anabolism-guide",
+    title: "Deep REM Sleep & Anabolism: The Overlooked Key to Barbell Recovery in Islamabad",
+    excerpt: "Discover why 7-9 hours of consistent sleep accelerates myofibrillar protein synthesis, normalizes cortisol spikes, and elevates natural growth hormone levels.",
+    category: "Recovery",
+    readTime: "6 min read",
+    date: "Sep 2026",
+    author: {
+      name: "Dr. Farhan Qazi",
+      role: "Sports Medicine Fellow",
+    },
+    content: [
+      "Slow-wave sleep stage 3 is when 95% of daily human growth hormone is secreted.",
+      "Cortisol dysregulation from chronic late nights impairs glycogen replenishment and muscle protein synthesis.",
+      "Maintain a 19°C cool, completely pitch-black sleep environment for optimal recovery.",
+    ],
+    takeaways: [
+      "Target minimum 7.5 hours nightly for neurological barbell recovery.",
+      "Cut blue light and pre-workout stimulants 4 hours before bedtime.",
+    ],
+  },
+  {
     id: "desi-diet-protein-guide",
     title: "How to Hit 150g+ Protein on a Pakistani Diet (Without Relying Just on Shakes)",
     excerpt: "A practical guide to optimizing local Pakistani meals for maximum lean muscle growth, budgeting, and satiety.",
