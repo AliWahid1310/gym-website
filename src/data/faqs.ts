@@ -7,6 +7,12 @@ export interface FAQItem {
 
 export const faqs: FAQItem[] = [
   {
+    id: "faq-chalk-belt",
+    question: "Are gym chalk and powerlifting lever belts allowed on all platforms?",
+    answer: "Yes! Unlike commercial health clubs, Power Fitness Zone Islamabad actively encourages liquid or block chalk usage on all Olympic platforms, deadlift bars, and power racks. We also maintain communal 10mm & 13mm IPF-approved lever belts for member use.",
+    category: "Facilities",
+  },
+  {
     id: "faq-1",
     category: "General",
     question: "What are the gym opening hours?",
