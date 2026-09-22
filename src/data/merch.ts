@@ -12,6 +12,17 @@ export interface MerchItem {
 
 export const merchData: MerchItem[] = [
   {
+    id: "heavy-fleece-hoodie",
+    name: "PFZ 450 GSM Heavy Iron Fleece Hoodie",
+    category: "apparel",
+    categoryLabel: "Apparel",
+    pricePKR: 5499,
+    inStock: true,
+    tag: "Bestseller",
+    description: "Ultra-heavyweight 450 GSM cotton fleece designed for cold Islamabad dawns and pre-workout warmups.",
+    specs: ["450 GSM Double-Faced Fleece", "Embroidered Iron House Crest", "Kangaroo Pocket with Secret Phone Sleeve"],
+  },
+  {
     id: "pump-cover-tee",
     name: "PFZ Heavyweight Oversized Pump Cover",
     category: "apparel",
