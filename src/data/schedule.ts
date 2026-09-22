@@ -38,6 +38,15 @@ export type Day = (typeof days)[number];
 export const schedule: Record<Day, ClassSession[]> = {
   Monday: [
     {
+      id: "mon-dawn-barbell",
+      time: "5:30 AM",
+      name: "Dawn Barbell Club",
+      instructor: "Hamza Abbasi",
+      instructorImage: "/images/trainer-hamza.jpg",
+      duration: "75 min",
+      category: "strength",
+    },
+    {
       id: "mon-1",
       time: "6:00 AM",
       name: "Power Lift",
