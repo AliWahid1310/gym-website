@@ -18,6 +18,23 @@ export interface Transformation {
 
 export const transformationsData: Transformation[] = [
   {
+    id: "trans-bilal",
+    name: "Bilal Warraich",
+    age: 27,
+    profession: "Corporate Financial Analyst",
+    category: "powerlifting",
+    categoryLabel: "Powerbuilding & Strength",
+    duration: "24 Weeks",
+    trainer: "Ahmed Khan",
+    startingWeight: "96 kg",
+    currentWeight: "92 kg",
+    achievement: "Added 75kg to SBD Total (540kg Total at Islamabad Open)",
+    keyMetric: "+75 kg SBD Total",
+    quote: "Power Fitness Zone changed my entire discipline. I dropped body fat while hitting numbers on the platform I thought were impossible.",
+    program: "12-Week Islamabad Powerbuilding Division",
+    highlights: ["220kg Squat", "150kg Bench", "260kg Deadlift"],
+  },
+  {
     id: "t1",
     name: "Zainab Malik",
     age: 28,
