@@ -124,6 +124,12 @@ power-fitness-zone/
 
 ## 📅 Changelog & Interactive Suite Updates
 
+- **September 22, 2026**:
+  - **Timetable**: Added Dawn Barbell 5:30 AM class for early-bird corporate lifters.
+  - **Branch Network**: Added G-11 Markaz Executive facility with calisthenics zone and valet.
+  - **Membership**: Introduced Corporate Executive Club tier with multi-branch passport.
+  - **Store**: Added 450GSM heavy iron fleece warmup hoodies.
+
 - **September 21, 2026**:
   - **Curriculum**: Added 12-Week Islamabad Powerbuilding Division program.
   - **Community Leaderboard**: Launched 500KG Raw Total Club with hall-of-fame plaque recognition.
