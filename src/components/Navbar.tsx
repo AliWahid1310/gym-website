@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Schedule", href: "#schedule" },
   { label: "Live Crowd", href: "#live-tracker" },
   { label: "Coach Finder", href: "#coach-finder" },
+  { label: "Floor Radar", href: "#equipment" },
   { label: "Equipment", href: "#equipment" },
   { label: "Pricing & Plans", href: "#pricing" },
   { label: "Meal Fuel", href: "#meal-planner" },
