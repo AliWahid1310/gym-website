@@ -21,6 +21,25 @@ export interface Branch {
 
 export const branchesData: Branch[] = [
   {
+    id: "g11-executive",
+    name: "G-11 Markaz Executive Branch",
+    badge: "Executive VIP",
+    city: "Islamabad",
+    address: "Plot 14-B, Executive Heights, G-11 Markaz, Islamabad",
+    phone: "+92 51 2894100",
+    whatsapp: "+92 300 8594210",
+    mapUrl: "https://maps.google.com/?q=G-11+Markaz+Islamabad",
+    hours: {
+      weekdays: "5:30 AM - 12:00 AM",
+      sunday: "8:00 AM - 10:00 PM",
+    },
+    keyFeatures: ["Dedicated Calisthenics Zone", "Cold Plunge & Finnish Steam", "Valet Parking", "Eleiko Combo Racks"],
+    crowdLevels: [
+      { timeSlot: "6:00 AM - 9:00 AM", level: "Moderate", percent: 45 },
+      { timeSlot: "5:00 PM - 8:30 PM", level: "Peak", percent: 78 },
+    ],
+  },
+  {
     id: "f8",
     name: "F-8 Markaz Flagship",
     badge: "Flagship HQ",
