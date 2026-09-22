@@ -13,6 +13,24 @@ export interface PricingTier {
 
 export const pricingTiers: PricingTier[] = [
   {
+    id: "corporate-elite",
+    name: "Corporate Executive Club",
+    monthlyPrice: 19999,
+    quarterlyPrice: 53999,
+    annualPrice: 179999,
+    description: "Multi-branch VIP pass for Islamabad diplomats, tech founders, and executives.",
+    features: [
+      "All-Branch Passport (F-8, F-10, G-11, DHA-2)",
+      "2 Monthly 1-on-1 Physiotherapy Screenings",
+      "Reserved RFID Steam & Cold Plunge Locker",
+      "Complimentary Guest Pass Every Month",
+      "Executive Lounge & Protein Bar Tab Discount",
+    ],
+    highlighted: false,
+    badge: "Executive VIP",
+    cta: "Join Executive Club",
+  },
+  {
     id: "starter",
     name: "Starter",
     monthlyPrice: 8000,
