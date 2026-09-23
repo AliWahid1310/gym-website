@@ -6,6 +6,7 @@ export default function ReferralProgram() {
   const [friendsCount, setFriendsCount] = useState<number>(2);
   const [memberName, setMemberName] = useState<string>("");
   const [copied, setCopied] = useState<boolean>(false);
+  const [copiedMsg, setCopiedMsg] = useState<boolean>(false);
   const [voucherCode, setVoucherCode] = useState<string | null>(null);
 
   const getRewardTier = (count: number) => {
@@ -51,6 +52,12 @@ export default function ReferralProgram() {
     : "PFZ-VIPFRIEND";
 
   const inviteText = `Hey! I train at Power Fitness Zone and I have a VIP 1-Day Guest Pass for you. Use my referral code "${referralCode}" to claim your free workout pass & 15% discount on joining!`;
+
+  const handleCopyInviteMessage = () => {
+    navigator.clipboard.writeText(`${inviteText} Claim here: https://powerfitzone.com`);
+    setCopiedMsg(true);
+    setTimeout(() => setCopiedMsg(false), 2500);
+  };
 
   const handleShareInvite = async () => {
     if (typeof navigator !== "undefined" && navigator.share) {
@@ -232,12 +239,20 @@ export default function ReferralProgram() {
               </div>
             </div>
 
-            <button
-              onClick={handleShareInvite}
-              className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30"
-            >
-              💬 Share VIP Pass Invite
-            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button
+                onClick={handleShareInvite}
+                className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30"
+              >
+                <span>💬</span> WhatsApp Invite
+              </button>
+              <button
+                onClick={handleCopyInviteMessage}
+                className="w-full py-3.5 bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 border border-neutral-700"
+              >
+                {copiedMsg ? "✓ Invite Copied!" : "📋 Copy Invite Text"}
+              </button>
+            </div>
           </div>
 
           {/* Unlocked Reward Tier Card */}
