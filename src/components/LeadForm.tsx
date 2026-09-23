@@ -10,6 +10,7 @@ interface FormData {
   email: string;
   branch: string;
   goal: string;
+  timeSlot: string;
 }
 
 interface FormErrors {
@@ -25,6 +26,7 @@ export default function LeadForm() {
     email: "",
     branch: "F-8 Markaz Flagship",
     goal: "Weight Loss & Conditioning",
+    timeSlot: "Evening (05:00 PM – 09:00 PM)",
   });
   const [submittedLead, setSubmittedLead] = useState<FormData | null>(null);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -80,6 +82,7 @@ export default function LeadForm() {
         email: "",
         branch: "F-8 Markaz Flagship",
         goal: "Weight Loss & Conditioning",
+        timeSlot: "Evening (05:00 PM – 09:00 PM)",
       });
     } catch {
       setStatus("error");
@@ -183,12 +186,12 @@ export default function LeadForm() {
                   You&apos;re In!
                 </h3>
                 <p className="text-white/80 font-body text-sm mb-6">
-                  We&apos;ve registered your 1-day pass for <span className="text-yellow-300 font-bold">{submittedLead?.branch || "Islamabad"}</span>. Our membership concierge is ready to schedule your session!
+                  We&apos;ve registered your 1-day pass for <span className="text-yellow-300 font-bold">{submittedLead?.branch || "Islamabad"}</span> ({submittedLead?.timeSlot || "Evening Slot"}). Our membership concierge is ready to schedule your session!
                 </p>
                 {submittedLead && (
                   <a
                     href={`https://wa.me/923335557890?text=${encodeURIComponent(
-                      `Hi Power Fitness Zone team! I just registered for a free trial pass on your website.\n\nName: ${submittedLead.name}\nBranch: ${submittedLead.branch}\nPrimary Goal: ${submittedLead.goal}\nPhone: ${submittedLead.phone}\n\nPlease confirm my workout slot!`
+                      `Hi Power Fitness Zone team! I just registered for a free trial pass on your website.\n\nName: ${submittedLead.name}\nBranch: ${submittedLead.branch}\nPreferred Time: ${submittedLead.timeSlot}\nPrimary Goal: ${submittedLead.goal}\nPhone: ${submittedLead.phone}\n\nPlease confirm my workout slot!`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -339,6 +342,29 @@ export default function LeadForm() {
                         <option value="Ladies Exclusive Training" className="bg-neutral-900 text-white">Ladies Exclusive Training</option>
                       </select>
                     </div>
+                  </div>
+
+                  {/* Workout Time Preference */}
+                  <div>
+                    <label
+                      htmlFor="lead-timeslot"
+                      className="block text-white/80 text-xs font-semibold uppercase tracking-widest font-body mb-1.5"
+                    >
+                      Preferred Workout Time Slot
+                    </label>
+                    <select
+                      id="lead-timeslot"
+                      value={formData.timeSlot}
+                      onChange={(e) =>
+                        setFormData({ ...formData, timeSlot: e.target.value })
+                      }
+                      className="w-full bg-black/40 border border-white/20 text-white px-3 py-3 font-body text-xs focus:outline-none focus:border-white transition-colors"
+                    >
+                      <option value="Morning (06:00 AM – 10:00 AM)" className="bg-neutral-900 text-white">Morning (06:00 AM – 10:00 AM)</option>
+                      <option value="Midday (10:00 AM – 04:00 PM)" className="bg-neutral-900 text-white">Midday (10:00 AM – 04:00 PM)</option>
+                      <option value="Evening Peak (05:00 PM – 09:00 PM)" className="bg-neutral-900 text-white">Evening Peak (05:00 PM – 09:00 PM)</option>
+                      <option value="Late Night (09:00 PM – 12:00 AM)" className="bg-neutral-900 text-white">Late Night (09:00 PM – 12:00 AM)</option>
+                    </select>
                   </div>
                 </div>
 
