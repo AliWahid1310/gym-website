@@ -125,6 +125,27 @@ const SUPPLEMENT_DATABASE: SupplementItem[] = [
     scientificBenefit: "Protects synovial fluid in heavy-loaded knees, elbows and spinal discs while supporting cardiovascular health.",
     goals: ["hypertrophy", "strength", "endurance", "fatloss"],
   },
+  {
+    id: "halal-collagen-peptides",
+    name: "Halal Grass-Fed Bovine Collagen Peptides",
+    category: "morning",
+    timing: "Morning Coffee or Post-Workout Shake",
+    dosage: "10g - 15g scoop",
+    purpose: "Tendon, ligament & joint cartilage resilience",
+    scientificBenefit: "Delivers glycine, proline, and hydroxyproline required for cellular connective tissue repair under heavy axial loads.",
+    proteinG: 11,
+    goals: ["strength", "hypertrophy", "endurance"],
+  },
+  {
+    id: "vitamin-d3-k2",
+    name: "Vitamin D3 (5,000 IU) + K2 (MK-7)",
+    category: "morning",
+    timing: "With Healthy Fat-Containing Breakfast",
+    dosage: "1 liquid softgel",
+    purpose: "Calcium bone deposition & endocrine hormonal balance",
+    scientificBenefit: "D3 facilitates calcium absorption while K2 directs it directly into skeletal bone matrix instead of arteries.",
+    goals: ["strength", "hypertrophy", "fatloss"],
+  },
 ];
 
 export default function SupplementBuilder() {
