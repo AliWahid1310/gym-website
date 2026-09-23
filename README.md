@@ -17,14 +17,16 @@ Designed specifically for modern athletes, lifters, and fitness enthusiasts acro
 - **Progressive Overload & Volume Tracker** — Systematic weekly weight jumps and volume progression manager.
 
 - **Digital Member Pass Wallet** — 3D interactive holographic flip card with contactless NFC badge, simulated turnstile gate check-in scanner (with Web Audio beeps), JSON digital pass export, and dynamic Islamabad branch selection.
+- **Member Referral Program & VIP Rewards** — Custom referral code personalization, unlocked reward tiers (1-6 months free dues, lever belts), 1-click WhatsApp guest invite sharing, and instant clipboard invite message copy.
+- **Smart Branch Onboarding & Lead Routing** — Session-aware branch selection modal with instant skip capability, workout time slot preferences (Morning, Midday, Evening Peak, Late Night), and instant WhatsApp concierge sync.
 - **Live Multi-Branch Floor & Equipment Radar** — Real-time squat rack availability, sauna status, floor crowd density across Islamabad facilities, 1-tap Google Maps directions link sharing, and 1-tap system clock synchronization.
-- **Smart Branch Onboarding & Lead Routing** — Session-aware branch selection modal with instant skip capability, automatically pre-selecting the member's home branch in the free trial concierge form.
 - **Gym Set Logger & PR Journal** — Log working sets with RPE ratings, calculate total tonnage volume moved (kg), rest interval countdown timer (30s-120s), CSV spreadsheet export, and persistent local storage.
 - **Interactive Membership Plan Finder** — ROI & value comparison calculator for Silver, Gold, and VIP Elite memberships.
 - **Monthly Challenges & Badges** — Leaderboards, community milestone badges, and Islamabad lifter challenges.
 - **Gym Etiquette Guide & Lifter IQ** — Code of conduct and 5-question interactive gym etiquette quiz.
 
 ### 🥗 Pakistani Nutrition & Biohacking
+- **Custom Supplement Stack Builder** — Interactive nutrient and ergogenic stack optimizer with dosage calculator, caffeine summation, Halal Grass-Fed Bovine Collagen Peptides, and Vitamin D3+K2 bone/hormone presets.
 - **Ramadan Fasting & Gym Protocol** — Optimized training windows (Post-Taraweeh, Pre-Iftar, Post-Iftar, Pre-Suhoor), 3.5L hydration timetable, and halal high-protein Pakistani meal recommendations.
 - **Desi High-Protein Recipe Kitchen** — Authentic Pakistani gym meals (Beef Shami, Chicken Karahi, Chana Chaat, Dahi Oats) with portion scalers and PKR cost breakdown.
 - **PKR Protein Cost Economy Calculator** — Compare cost-per-gram of protein across Pakistani whole foods and whey supplements.
