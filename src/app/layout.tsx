@@ -34,7 +34,15 @@ export const metadata: Metadata = {
     "boxing gym Islamabad",
     "HIIT workouts",
     "bodybuilding gym",
+    "female fitness Islamabad",
+    "24/7 gym Islamabad",
+    "best gym in Islamabad",
+    "weight loss trainer Islamabad",
+    "powerlifting Pakistan",
   ],
+  authors: [{ name: "Power Fitness Zone Team", url: "https://powerfitzone.com" }],
+  creator: "Power Fitness Zone",
+  publisher: "Power Fitness Zone",
   openGraph: {
     title: "Power Fitness Zone — Elite Gym & Strength Performance Center",
     description:
