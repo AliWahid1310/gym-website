@@ -256,21 +256,31 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs font-body">
-            © {new Date().getFullYear()} Power Fitness Zone Pakistan. All rights reserved.
-          </p>
-          <div className="flex gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p className="text-white/40 text-xs font-body">
+              © {new Date().getFullYear()} Power Fitness Zone Pakistan. All rights reserved.
+            </p>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="text-[11px] text-neutral-400 flex items-center justify-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              24/7 First-Aid & AED Certified Staff On-Site
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-white/50 font-body">
             <a
-              href="#"
-              className="text-white/40 text-xs font-body hover:text-white/70 transition-colors duration-300"
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Power Fitness Zone " + activeBranch.name + " " + activeBranch.address)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-red hover:underline flex items-center gap-1 font-semibold"
             >
-              Privacy Policy
+              <span>📍</span> Open in Maps
             </a>
+            <span className="text-white/20">•</span>
             <a
-              href="#"
-              className="text-white/40 text-xs font-body hover:text-white/70 transition-colors duration-300"
+              href="#faq"
+              className="hover:text-white/70 transition-colors duration-300"
             >
-              Terms & Safety Protocols
+              Safety Rules & FAQ
             </a>
           </div>
         </div>
