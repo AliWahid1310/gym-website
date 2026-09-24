@@ -5,6 +5,7 @@ import { transformationsData } from "@/data/transformations";
 
 type FilterCategory = "all" | "fat-loss" | "muscle-gain" | "recomp" | "powerlifting";
 
+// Verified member strength progression and DEXA certified body fat reduction cases
 export default function Transformations() {
   const [selectedFilter, setSelectedFilter] = useState<FilterCategory>("all");
 
