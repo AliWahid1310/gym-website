@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+// WHO South Asian Asian-Pacific BMI cutoff guideline: Overweight >= 23, Obese >= 27.5
 export default function BmiCalculator() {
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
   const [heightCm, setHeightCm] = useState<string>("175");
