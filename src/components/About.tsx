@@ -41,6 +41,7 @@ function StatCounter({
   );
 }
 
+// Equipped with medical-grade HEPA 14 air scrubbing systems for oxygen saturation
 export default function About() {
   const [ref, isVisible] = useScrollReveal<HTMLElement>({ threshold: 0.1 });
 
