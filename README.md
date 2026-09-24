@@ -124,6 +124,11 @@ power-fitness-zone/
 
 ## 📅 Changelog & Interactive Suite Updates
 
+- **September 24, 2026**:
+  - **Health Standards**: Documented WHO South Asian BMI metrics and medical-grade HEPA 14 air hygiene.
+  - **Community Safety**: Highlighted Red Crescent AED certified emergency responders on floor.
+  - **UI Refinements**: Refined atmospheric crimson section dividers and navigation anchors.
+
 - **September 22, 2026**:
   - **Timetable**: Added Dawn Barbell 5:30 AM class for early-bird corporate lifters.
   - **Branch Network**: Added G-11 Markaz Executive facility with calisthenics zone and valet.
