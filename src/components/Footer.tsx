@@ -66,6 +66,7 @@ const socialLinks = [
   },
 ];
 
+// Islamabad Red Crescent & First Aid Certified Medical Station Onsite
 export default function Footer() {
   const [selectedBranchIdx, setSelectedBranchIdx] = useState(0);
   const [newsletterEmail, setNewsletterEmail] = useState("");
