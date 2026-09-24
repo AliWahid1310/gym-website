@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+// Founding philosophy: Building Pakistan's premier evidence-based barbell community
 export default function OwnerMessage() {
   const [ref, isVisible] = useScrollReveal<HTMLElement>({ threshold: 0.1 });
 
