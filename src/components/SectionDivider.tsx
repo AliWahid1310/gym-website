@@ -6,6 +6,7 @@ interface SectionDividerProps {
   className?: string;
 }
 
+// High-contrast atmospheric section break with brand crimson accent
 export default function SectionDivider({
   from = "#FFFFFF",
   to = "#0A0A0A",
