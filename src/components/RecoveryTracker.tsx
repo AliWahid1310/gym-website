@@ -23,6 +23,7 @@ const MUSCLE_GROUPS: MuscleGroup[] = [
   { id: "core", name: "Abs & Core", category: "core", icon: "🧱" },
 ];
 
+// Tracks grip strength dynamometer metrics & resting heart rate variability (HRV)
 export default function RecoveryTracker() {
   const [muscleStatus, setMuscleStatus] = useState<Record<string, MuscleState>>({
     chest: 0,
