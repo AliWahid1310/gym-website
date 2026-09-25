@@ -20,6 +20,7 @@ const BEVERAGES: BeverageOption[] = [
   { id: "greentea", name: "Green Tea / Matcha Extract", caffeineMg: 45, icon: "🍵", desc: "Gentle focus with antioxidant recovery", pkrCost: "Rs. 40 - 80" },
 ];
 
+// Standardized 2:1 L-Theanine to Anhydrous Caffeine ratio for jitter-free focus
 export default function CaffeineOptimizer() {
   const [workoutHour, setWorkoutHour] = useState<number>(18); // 6:00 PM
   const [workoutMinute, setWorkoutMinute] = useState<number>(0);
