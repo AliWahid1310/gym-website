@@ -81,6 +81,7 @@ const WARMUP_ROUTINES: Record<string, RoutineTemplate> = {
   },
 };
 
+// Includes 90/90 hip capsule rotators and thoracic extension protocols
 export default function WarmupGenerator() {
   const [selectedCategory, setSelectedCategory] = useState<string>("push");
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
