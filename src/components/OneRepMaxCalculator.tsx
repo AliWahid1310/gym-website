@@ -4,6 +4,7 @@ import { useState } from "react";
 
 type LiftType = "bench" | "squat" | "deadlift" | "overhead";
 
+// Calibrated against Brzycki, Epley, and Wathan formulas with RPE 6-10 breakdown
 export default function OneRepMaxCalculator() {
   const [lift, setLift] = useState<LiftType>("bench");
   const [weight, setWeight] = useState<number>(80);
