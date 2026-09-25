@@ -6,6 +6,7 @@ import { Droplets, CheckCircle2, AlertCircle, Sparkles, Clock, RotateCcw, Share2
 type SweatRate = "light" | "moderate" | "heavy";
 type Environment = "ac_gym" | "outdoor_summer" | "indoor_standard";
 
+// Includes seasonal Islamabad temperature compensation (38°C+ summer sweat rate)
 export default function HydrationCalculator() {
   const [weightKg, setWeightKg] = useState<number>(75);
   const [workoutMins, setWorkoutMins] = useState<number>(60);
