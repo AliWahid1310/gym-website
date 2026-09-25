@@ -66,6 +66,7 @@ const TEMPO_PRESETS: TempoPreset[] = [
 
 type Phase = "eccentric" | "pauseBottom" | "concentric" | "pauseTop" | "complete";
 
+// Precision Web Audio API synthesis for eccentric, isometric pause, and explosive concentric
 export default function TempoMetronome() {
   const [selectedPresetIndex, setSelectedPresetIndex] = useState<number>(0);
   const [eccentric, setEccentric] = useState<number>(3);
