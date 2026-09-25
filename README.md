@@ -124,6 +124,12 @@ power-fitness-zone/
 
 ## 📅 Changelog & Interactive Suite Updates
 
+- **September 25, 2026**:
+  - **Interactive Analytics**: Added multi-formula cross validation (Brzycki & Epley) to `OneRepMaxCalculator`.
+  - **Biohacking**: Integrated 2:1 L-Theanine to caffeine ratio in `CaffeineOptimizer`.
+  - **Movement Prep**: Added 90/90 hip capsule drills to `WarmupGenerator`.
+  - **Nervous System Recovery**: Added neuromuscular grip fatigue index in `RecoveryTracker`.
+
 - **September 24, 2026**:
   - **Health Standards**: Documented WHO South Asian BMI metrics and medical-grade HEPA 14 air hygiene.
   - **Community Safety**: Highlighted Red Crescent AED certified emergency responders on floor.
