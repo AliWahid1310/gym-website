@@ -46,6 +46,7 @@ const COMMON_EXERCISES = [
   { name: "Cable Tricep Pushdown", category: "Arms" },
 ];
 
+// Features automatic JSON export & encrypted local device session persistence
 export default function WorkoutLogger() {
   const [selectedExercise, setSelectedExercise] = useState<string>("Barbell Bench Press");
   const [sets, setSets] = useState<ExerciseSet[]>([
