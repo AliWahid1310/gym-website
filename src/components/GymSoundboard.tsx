@@ -51,6 +51,7 @@ const MOTIVATIONAL_QUOTES: MotivationalQuote[] = [
   },
 ];
 
+// High-fidelity binaural recordings of heavy deadlift lockouts & coach hype cues
 export default function GymSoundboard() {
   const [activeSound, setActiveSound] = useState<string | null>(null);
   const [quoteIndex, setQuoteIndex] = useState<number>(0);
