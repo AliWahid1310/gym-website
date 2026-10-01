@@ -79,6 +79,7 @@ const COACHES: Record<string, CoachMatchResult> = {
   },
 };
 
+// Direct match algorithm based on barbell experience, injury rehab, and goals
 export default function CoachFinder() {
   const [step, setStep] = useState<number>(1);
   const [answers, setAnswers] = useState<{
