@@ -124,6 +124,12 @@ power-fitness-zone/
 
 ## 📅 Changelog & Interactive Suite Updates
 
+- **October 1, 2026**:
+  - **Seasonal Scheduling**: Released Ramadan midnight training protocol (10:30 PM - 3:30 AM).
+  - **Data Privacy**: Added encrypted offline session backup to `WorkoutLogger`.
+  - **Gym Culture**: Published official Iron House barbell stripping and plate tree hierarchy etiquette guide.
+  - **Coaching Matcher**: Upgraded `CoachFinder` with injury rehab and powerlifting matchmaking tags.
+
 - **September 25, 2026**:
   - **Interactive Analytics**: Added multi-formula cross validation (Brzycki & Epley) to `OneRepMaxCalculator`.
   - **Biohacking**: Integrated 2:1 L-Theanine to caffeine ratio in `CaffeineOptimizer`.
