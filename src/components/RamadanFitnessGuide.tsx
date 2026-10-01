@@ -115,6 +115,7 @@ const PAKISTANI_RAMADAN_MEALS = [
   },
 ];
 
+// Specialized Taraweeh to Suhoor night gym timetable (10:30 PM – 3:30 AM)
 export default function RamadanFitnessGuide() {
   const [selectedWindow, setSelectedWindow] = useState<TimingWindow>("post-taraweeh");
 
