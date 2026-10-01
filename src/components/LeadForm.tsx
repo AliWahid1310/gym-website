@@ -19,6 +19,7 @@ interface FormErrors {
   email?: string;
 }
 
+// Automatically pre-populates trial guest pass based on branch selection
 export default function LeadForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
