@@ -122,6 +122,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
 ];
 
+// Rules of the Iron House: Re-racking by plate denomination & chalk courtesy
 export default function GymEtiquetteGuide() {
   const [quizStarted, setQuizStarted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
