@@ -60,11 +60,20 @@ export default function WilksCalculator() {
     }
     const denom = a + b * bw + c * Math.pow(bw, 2) + d * Math.pow(bw, 3) + e * Math.pow(bw, 4) + f * Math.pow(bw, 5);
     if (denom <= 0) return 0;
-    return Math.round(((500 / denom) * total) * 100) / 100;
+  // IPF GL Points (Official IPF Standard since 2020)
+  const calculateIpfGl = (bw: number, total: number, isMale: boolean): number => {
+    if (bw <= 30 || total <= 0) return 0;
+    const a = isMale ? 1199.72839 : 610.32796;
+    const b = isMale ? 1025.18162 : 1045.59282;
+    const c = isMale ? 0.00921 : 0.03048;
+    const denom = a - b * Math.exp(-c * bw);
+    if (denom <= 0) return 0;
+    return Math.round(((100 * total) / denom) * 100) / 100;
   };
 
   const dotsScore = calculateDots(bwKg, totalKg, gender === "male");
   const wilksScore = calculateWilks(bwKg, totalKg, gender === "male");
+  const ipfGlScore = calculateIpfGl(bwKg, totalKg, gender === "male");
 
   const getTier = (score: number) => {
     if (score >= 460) return { title: "International Elite", color: "text-amber-400 border-amber-500/50 bg-amber-950/40", desc: "World championship podium contender rank" };
@@ -292,19 +301,24 @@ export default function WilksCalculator() {
                 <div className="text-xs text-neutral-500 mt-1">Official IPF & USAPL Normalized Score</div>
               </div>
 
-              {/* Wilks score comparison */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="p-3.5 bg-[#090909]/80 rounded-xl border border-neutral-800/80 text-center">
-                  <div className="text-xs text-neutral-400 font-semibold mb-0.5">Wilks Score</div>
-                  <div className="text-2xl font-black text-white">{wilksScore}</div>
-                  <div className="text-[10px] text-neutral-500">Classic Formula</div>
+              {/* Wilks & IPF GL score comparison */}
+              <div className="grid grid-cols-3 gap-2.5 mb-6">
+                <div className="p-3 bg-[#090909]/80 rounded-xl border border-neutral-800/80 text-center">
+                  <div className="text-[11px] text-neutral-400 font-semibold mb-0.5">Wilks</div>
+                  <div className="text-xl font-black text-white">{wilksScore}</div>
+                  <div className="text-[9px] text-neutral-500">Classic</div>
                 </div>
-                <div className="p-3.5 bg-[#090909]/80 rounded-xl border border-neutral-800/80 text-center">
-                  <div className="text-xs text-neutral-400 font-semibold mb-0.5">Strength Ratio</div>
-                  <div className="text-2xl font-black text-red-400">
+                <div className="p-3 bg-[#090909]/80 rounded-xl border border-neutral-800/80 text-center">
+                  <div className="text-[11px] text-neutral-400 font-semibold mb-0.5">IPF GL</div>
+                  <div className="text-xl font-black text-amber-400">{ipfGlScore}</div>
+                  <div className="text-[9px] text-neutral-500">Modern IPF</div>
+                </div>
+                <div className="p-3 bg-[#090909]/80 rounded-xl border border-neutral-800/80 text-center">
+                  <div className="text-[11px] text-neutral-400 font-semibold mb-0.5">Multiple</div>
+                  <div className="text-xl font-black text-red-400">
                     {bwKg > 0 ? (totalKg / bwKg).toFixed(2) : "0.00"}x
                   </div>
-                  <div className="text-[10px] text-neutral-500">Bodyweight Multiple</div>
+                  <div className="text-[9px] text-neutral-500">BW Ratio</div>
                 </div>
               </div>
 
