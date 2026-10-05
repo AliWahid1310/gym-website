@@ -146,6 +146,26 @@ const SUPPLEMENT_DATABASE: SupplementItem[] = [
     scientificBenefit: "D3 facilitates calcium absorption while K2 directs it directly into skeletal bone matrix instead of arteries.",
     goals: ["strength", "hypertrophy", "fatloss"],
   },
+  {
+    id: "l-glutamine",
+    name: "Micronized Fermented L-Glutamine",
+    category: "post",
+    timing: "Post-Workout or Before Sleep",
+    dosage: "5g - 10g",
+    purpose: "Gut barrier repair, intestinal integrity & immune defense",
+    scientificBenefit: "Primary fuel source for enterocytes and immune cells, reducing muscle breakdown during heavy volume training blocks.",
+    goals: ["hypertrophy", "strength", "endurance"],
+  },
+  {
+    id: "himalayan-shilajit",
+    name: "Gold Grade Pure Himalayan Shilajit Resin",
+    category: "morning",
+    timing: "Morning with Warm Water or Raw Milk",
+    dosage: "250mg pea-sized drop",
+    purpose: "Fulvic acid cellular transport & 84+ ionic trace minerals",
+    scientificBenefit: "Improves mitochondrial bioenergetics and increases cellular ATP generation during intense physical exertion.",
+    goals: ["strength", "hypertrophy"],
+  },
 ];
 
 export default function SupplementBuilder() {
