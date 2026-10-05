@@ -74,6 +74,20 @@ const playlists: Playlist[] = [
     kickFreq: 75,
     pattern: [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
   },
+  {
+    id: "desi-drill",
+    name: "Islamabad Drill & Underground Trap",
+    genre: "Urdu Rap / Karachi Drill / Bass",
+    bpm: "140 BPM",
+    baseBpm: 140,
+    vibe: "Raw Islamabad Heavy Squat Energy",
+    trackCount: 55,
+    featuredArtists: ["Talha Anjum", "Umair", "Faris Shafi", "Young Stunners", "JJ47"],
+    spotifyUrl: "https://open.spotify.com",
+    color: "from-emerald-600/30 to-neutral-900",
+    kickFreq: 85,
+    pattern: [1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0],
+  },
 ];
 
 export default function GymPlaylist() {
