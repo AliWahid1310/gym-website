@@ -313,7 +313,7 @@ export default function DesiGymRecipes() {
               </div>
 
               <div>
-                <div className="flex items-center justify-between text-xs text-zinc-400 pt-3 border-t border-zinc-800/80 mb-4">
+                <div className="flex items-center justify-between text-xs text-zinc-400 pt-3 border-t border-zinc-800/80 mb-2">
                   <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5 text-zinc-500" />
                     {recipe.prepTime}
@@ -321,6 +321,10 @@ export default function DesiGymRecipes() {
                   <span className="text-emerald-400 font-bold font-mono">
                     ~Rs. {recipe.costPkr} / meal
                   </span>
+                </div>
+                <div className="flex items-center justify-between text-[10px] text-zinc-500 pb-3">
+                  <span className="text-emerald-500/90 font-medium">✓ Halal Whole Foods</span>
+                  <span className="text-zinc-400 font-mono">Complete Amino Profile</span>
                 </div>
 
                 <div className="flex gap-2">
