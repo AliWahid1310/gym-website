@@ -80,4 +80,25 @@ export const articlesData: Article[] = [
       "HIIT sessions on our curved treadmills or assault bikes for 15-20 minutes create an intense oxygen debt that keeps your body burning calories long after leaving the gym floor.",
     ],
   },
+  {
+    id: "contrast-therapy-recovery",
+    title: "Sauna & Cold Plunge Contrast Protocol: Flush Lactate & Accelerate CNS Recovery",
+    excerpt: "How alternating between 80°C Finnish sauna and 6°C cold plunge triggers heat shock proteins, nitric oxide, and restorative sleep.",
+    category: "Recovery",
+    readTime: "4 min read",
+    date: "Oct 2026",
+    author: {
+      name: "Dr. Danial Hashmi",
+      role: "Sports Physiotherapist & Recovery Lead",
+    },
+    takeaways: [
+      "15 mins Finnish Sauna increases growth hormone and cardiovascular blood flow",
+      "3 mins Cold Plunge reduces inflammatory cytokines and central nervous system fatigue",
+      "Finish on cold for daytime alertness, finish on warm sauna before night sleep",
+    ],
+    content: [
+      "Heavy progressive overload creates microscopic muscular inflammation. Contrast therapy stimulates vascular pumping through rapid vasodilation followed by vasoconstriction.",
+      "At Power Fitness Zone's dedicated recovery suites in F-7 and DHA 2, lifters utilize contrast therapy protocols 2-3 times per week to dramatically shorten delayed onset muscle soreness (DOMS).",
+    ],
+  },
 ];

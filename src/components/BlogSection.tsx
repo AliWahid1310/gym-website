@@ -7,7 +7,7 @@ export default function BlogSection() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [filter, setFilter] = useState<string>("All");
 
-  const categories = ["All", "Nutrition", "Strength", "Cardio"];
+  const categories = ["All", "Nutrition", "Strength", "Cardio", "Recovery"];
 
   const filteredArticles = articlesData.filter(
     (a) => filter === "All" || a.category === filter
