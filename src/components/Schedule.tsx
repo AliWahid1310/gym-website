@@ -303,6 +303,34 @@ export default function Schedule() {
           </div>
         </div>
 
+        {/* Quick coach pills */}
+        <div className="flex flex-wrap items-center gap-2 mb-6 text-xs text-neutral-500">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Popular Coaches:</span>
+          {["Ahmed Khan", "Sara Ali", "Farhan Saeed", "Zainab Malik"].map((coach) => (
+            <button
+              key={coach}
+              type="button"
+              onClick={() => setSearchQuery(searchQuery === coach ? "" : coach)}
+              className={`px-2.5 py-1 rounded-full text-xs transition-colors border ${
+                searchQuery === coach
+                  ? "bg-brand-red border-brand-red text-white font-bold shadow-sm"
+                  : "bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300 hover:text-black"
+              }`}
+            >
+              Coach {coach}
+            </button>
+          ))}
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={() => setSearchQuery("")}
+              className="text-xs text-brand-red hover:underline ml-1 font-semibold"
+            >
+              Reset Filter
+            </button>
+          )}
+        </div>
+
         {/* Day Selector */}
         <div
           className={`grid grid-cols-4 sm:grid-cols-7 gap-1.5 sm:gap-2 mb-8 transition-all duration-700 delay-300 ${
