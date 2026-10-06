@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CheckSquare, Square, CheckCircle, RotateCcw, Sparkles, ShieldCheck, Dumbbell, Droplets, UserCheck, Smartphone } from "lucide-react";
+import { CheckSquare, Square, CheckCircle, RotateCcw, Sparkles, ShieldCheck, Dumbbell, Droplets, UserCheck, Smartphone, Copy, Check, Share2 } from "lucide-react";
 
 interface ChecklistItem {
   id: string;
@@ -35,6 +35,18 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
 export default function GymBagChecklist() {
   const [checkedIds, setCheckedIds] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<"all" | "lifting" | "hydration" | "hygiene" | "tech">("all");
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const copyChecklist = () => {
+    const lines = CHECKLIST_ITEMS.map((item) => {
+      const isChecked = checkedIds.includes(item.id);
+      return `${isChecked ? "✅" : "⬜"} ${item.name} (${item.desc})`;
+    });
+    const summary = `🏋️ PFZ Gym Bag Readiness: ${readyPercent}% Ready\n\n` + lines.join("\n");
+    navigator.clipboard.writeText(summary);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   useEffect(() => {
     try {
@@ -128,6 +140,14 @@ export default function GymBagChecklist() {
               <p className="text-xs text-neutral-400 mt-1">{readiness.msg}</p>
             </div>
             <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={copyChecklist}
+                className="px-3.5 py-2 text-xs font-bold rounded-lg bg-neutral-900 border border-neutral-700 text-neutral-200 hover:text-white hover:border-neutral-500 transition-colors flex items-center gap-1.5"
+              >
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-neutral-400" />}
+                <span>{copied ? "Copied!" : "Copy Summary"}</span>
+              </button>
               <button
                 type="button"
                 onClick={checkAll}
