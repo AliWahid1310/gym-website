@@ -161,6 +161,14 @@ export default function RootLayout({
                 reviewCount: "248",
               },
               priceRange: "PKR 8,000 – PKR 25,000/month",
+              amenityFeature: [
+                { "@type": "LocationFeatureSpecification", name: "Olympic Lifting Platforms", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Finnish Dry Sauna & Steam", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Cold Plunge Recovery Pool", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Ladies Private Biometric Studio", value: true },
+                { "@type": "LocationFeatureSpecification", name: "Biohacking & Nutrition Bar", value: true },
+                { "@type": "LocationFeatureSpecification", name: "CCTV Monitored Valet Parking", value: true },
+              ],
             }),
           }}
         />
