@@ -240,9 +240,19 @@ export default function BranchExplorer() {
 
               <div className="mt-8 pt-6 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-400">
                 <span>Multi-branch pass holders can access all 3 locations anytime.</span>
-                <a href="#contact" className="text-red-400 hover:text-red-300 font-semibold underline">
-                  Request Branch Tour →
-                </a>
+                <div className="flex items-center gap-3">
+                  <a
+                    href={`https://wa.me/923001234567?text=${encodeURIComponent(`Hi PowerFitnessZone! I am inquiring about memberships and facilities at your ${activeBranch.name} branch in Islamabad.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-bold text-xs transition-colors shadow-sm"
+                  >
+                    <span>💬 WhatsApp Branch Concierge</span>
+                  </a>
+                  <a href="#contact" className="text-red-400 hover:text-red-300 font-semibold underline">
+                    Request Tour →
+                  </a>
+                </div>
               </div>
             </div>
           </div>
