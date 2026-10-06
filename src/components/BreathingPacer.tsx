@@ -230,6 +230,21 @@ export default function BreathingPacer() {
             </div>
           </div>
 
+          {/* Dynamic Phase Coaching Cue */}
+          <div className="text-center min-h-[2.5rem] flex items-center justify-center mb-6 px-4">
+            <p className="text-sm font-medium text-neutral-300">
+              {!isActive
+                ? "Press 'Start Breathwork' to begin guided respiratory pacing."
+                : phase === "Inhale"
+                ? "🌬️ Deep diaphragmatic inhale through nose — expand belly and lower ribcage."
+                : phase === "Hold"
+                ? "🧘 Hold breath smoothly without strain — allow cellular oxygen diffusion."
+                : phase === "Exhale"
+                ? "💨 Prolonged controlled exhale through mouth — stimulate vagus nerve calming."
+                : "⏸️ Stillness pause before initiating next inhalation cycle."}
+            </p>
+          </div>
+
           {/* Stats Bar */}
           <div className="flex items-center gap-6 text-sm text-neutral-400 mb-8">
             <div className="flex items-center gap-2">
