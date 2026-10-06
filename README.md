@@ -122,6 +122,24 @@ power-fitness-zone/
 
 ---
 
+## 📅 October 2026 Changelog & Interactive Suite Updates
+
+- **October 5, 2026**:
+  - **Biohacking**: Added Fermented L-Glutamine and Pure Himalayan Shilajit Resin to `SupplementBuilder`.
+  - **Powerlifting**: Integrated modern IPF GL Points formula in `WilksCalculator` alongside DOTS and classic Wilks.
+  - **Workout Audio**: Added Islamabad Drill & Underground Trap playlist to `GymPlaylist`.
+  - **Nutrition**: Enriched Pakistani kitchen meals with 100% Halal whole food and leucine bioavailability badges in `DesiGymRecipes`.
+  - **Knowledge Base**: Added contrast therapy recovery protocol and Recovery filter category in `BlogSection`.
+
+- **October 6, 2026**:
+  - **Session Prep**: Implemented 1-click clipboard summary export in `GymBagChecklist`.
+  - **Branch Concierge**: Integrated direct WhatsApp branch inquiries for F-8, G-8, and F-10 in `BranchExplorer`.
+  - **Recovery Pacer**: Added real-time diaphragmatic and vagus nerve physiological breath cues in `BreathingPacer`.
+  - **Class Timetable**: Added popular coach filter pills and instant search reset in `Schedule`.
+  - **SEO & Schema**: Enriched `HealthClub` JSON-LD schema with `LocationFeatureSpecification` amenities for Olympic platforms, sauna, and ladies suites in `layout.tsx`.
+
+---
+
 ## 📄 License & Attribution
 
 All rights reserved © 2026 Power Fitness Zone / 360 Fitness Islamabad.
