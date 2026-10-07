@@ -38,6 +38,7 @@ import BreathingPacer from "@/components/BreathingPacer";
 import FitnessGoalTimeline from "@/components/FitnessGoalTimeline";
 import ChallengesSection from "@/components/ChallengesSection";
 import GymEtiquetteGuide from "@/components/GymEtiquetteGuide";
+import GymBagChecklist from "@/components/GymBagChecklist";
 import Amenities from "@/components/Amenities";
 import BranchExplorer from "@/components/BranchExplorer";
 import GymEquipmentTracker from "@/components/GymEquipmentTracker";
@@ -160,6 +161,7 @@ export default function Home() {
         {/* Monthly Member Challenges & Badges */}
         <ChallengesSection />
         <GymEtiquetteGuide />
+        <GymBagChecklist />
 
         {/* 7. Premium Amenities */}
         <Amenities />
