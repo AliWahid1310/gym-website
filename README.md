@@ -9,6 +9,7 @@ Designed specifically for modern athletes, lifters, and fitness enthusiasts acro
 ## ⚡ Key Features & Interactive Suite
 
 ### 🏋️ Strength, Powerlifting & Biomechanics
+- **Wilks & DOTS Powerlifting Coefficient Calculator** — Standardized IPF and USAPL pound-for-pound strength score calculator with gender coefficients, SBD lift inputs, and lifter master tier classification.
 - **Olympic Barbell 3D Plate Calculator** — Visual barbell sleeve loading rack with calibrated color-coded bumper plates (Red 25kg, Blue 20kg, Yellow 15kg, Green 10kg, White 5kg, Black 2.5kg, Silver 1.25kg, collars), kg/lbs toggle, and CNS ramping warmup progression.
 - **Rep Tempo & Cadence Metronome** — Web Audio API synthesized metronome with dynamic pulse ring gauge for Eccentric lowering, Isometric bottom pause, Concentric lifting, and Top squeeze.
 - **Gym Set Logger & PR Journal** — Log working sets with RPE ratings, calculate total tonnage volume moved (kg), and celebrate Personal Records with persistent local storage.
@@ -16,19 +17,21 @@ Designed specifically for modern athletes, lifters, and fitness enthusiasts acro
 - **Strength Standards & SBD Classifier** — Compare compound lifts (Squat, Bench, Deadlift, OHP) against international strength standards and gym ranks.
 - **Progressive Overload & Volume Tracker** — Systematic weekly weight jumps and volume progression manager.
 
+### 🧘 Recovery & Session Preparation
+- **Athletic Breathwork & Heart Rate Recovery Pacer** — Visual breathing circle with Box Breathing (4-4-4-4), 4-7-8 Parasympathetic Vagus Nerve Reset, CNS Pre-PR Oxygen Charge, and Web Audio API chime transitions.
+- **Gym Bag Gear & Session Readiness Audit** — Interactive pre-workout checklist with mandatory gear (lever belts, knee sleeves, liquid chalk, microfibre towels, contactless QR pass) and real-time readiness scoring.
 - **Digital Member Pass Wallet** — 3D interactive holographic flip card with contactless NFC badge, simulated turnstile gate check-in scanner (with Web Audio beeps), JSON digital pass export, and dynamic Islamabad branch selection.
 - **Member Referral Program & VIP Rewards** — Custom referral code personalization, unlocked reward tiers (1-6 months free dues, lever belts), 1-click WhatsApp guest invite sharing, and instant clipboard invite message copy.
 - **Smart Branch Onboarding & Lead Routing** — Session-aware branch selection modal with instant skip capability, workout time slot preferences (Morning, Midday, Evening Peak, Late Night), and instant WhatsApp concierge sync.
 - **Live Multi-Branch Floor & Equipment Radar** — Real-time squat rack availability, sauna status, floor crowd density across Islamabad facilities, 1-tap Google Maps directions link sharing, and 1-tap system clock synchronization.
-- **Gym Set Logger & PR Journal** — Log working sets with RPE ratings, calculate total tonnage volume moved (kg), rest interval countdown timer (30s-120s), CSV spreadsheet export, and persistent local storage.
-- **Interactive Membership Plan Finder** — ROI & value comparison calculator for Silver, Gold, and VIP Elite memberships.
+- **Interactive Membership Plan Finder & Student Verification** — ROI & value comparison calculator for Silver, Gold, and VIP Elite memberships with instant 15% student & corporate group discount toggle.
 - **Monthly Challenges & Badges** — Leaderboards, community milestone badges, and Islamabad lifter challenges.
 - **Gym Etiquette Guide & Lifter IQ** — Code of conduct and 5-question interactive gym etiquette quiz.
 
 ### 🥗 Pakistani Nutrition & Biohacking
 - **Custom Supplement Stack Builder** — Interactive nutrient and ergogenic stack optimizer with dosage calculator, caffeine summation, Halal Grass-Fed Bovine Collagen Peptides, and Vitamin D3+K2 bone/hormone presets.
 - **Ramadan Fasting & Gym Protocol** — Optimized training windows (Post-Taraweeh, Pre-Iftar, Post-Iftar, Pre-Suhoor), 3.5L hydration timetable, and halal high-protein Pakistani meal recommendations.
-- **Desi High-Protein Recipe Kitchen** — Authentic Pakistani gym meals (Beef Shami, Chicken Karahi, Chana Chaat, Dahi Oats) with portion scalers and PKR cost breakdown.
+- **Desi High-Protein Recipe Kitchen** — Authentic Pakistani gym meals (Beef Shami, Chicken Karahi, Chana Chaat, Dahi Oats, Dhaba Daal Mash with Eggs, Collagen-rich Mutton Yakhni) with portion scalers and PKR cost breakdown.
 - **PKR Protein Cost Economy Calculator** — Compare cost-per-gram of protein across Pakistani whole foods and whey supplements.
 - **Pre-Workout Caffeine & Sleep Recovery Optimizer** — Pre-workout timing and caffeine half-life tracker to maximize workout intensity while protecting restorative sleep.
 - **Macro & TDEE Nutrition Engine** — Precise calories and macro targets tailored for fat loss, clean bulk, or body recomposition.
@@ -36,7 +39,7 @@ Designed specifically for modern athletes, lifters, and fitness enthusiasts acro
 ### ⏱️ Conditioning & Facility Hub
 - **HIIT & Tabata Gym Interval Timer** — Custom work/rest intervals with audio beeps and visual fullscreen timer.
 - **Dynamic Warm-Up & Mobility Protocol** — Targeted joint prep protocols for upper body, lower body, and full-body sessions.
-- **Floating Speed Dial Toolkit Dock** — Quick-access search modal to instantly jump between 20+ fitness calculators and tools.
+- **Floating Speed Dial Toolkit Dock** — Quick-access search modal to instantly jump between 24+ fitness calculators and tools.
 - **Workout Beats & Soundboard** — Motivation audio tracks and synthesized gym sound effects.
 
 ---
