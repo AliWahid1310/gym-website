@@ -104,4 +104,18 @@ export const faqs: FAQItem[] = [
     answer:
       "All members get free access to daily digital RFID lockers during their workout session. Monthly dedicated private locker rentals are also available upon request at reception.",
   },
+  {
+    id: "faq-15",
+    category: "Facilities",
+    question: "Are there dedicated Olympic lifting platforms and calibrated bumper plates?",
+    answer:
+      "Yes! Our F-7 Markaz and Bahria Town facilities feature Eleiko and Rogue competition spec Olympic lifting platforms, calibrated steel kilo discs, Texas power bars, and sound-dampening drop zones.",
+  },
+  {
+    id: "faq-16",
+    category: "Ladies",
+    question: "Is biometric access control implemented for the women-only training wing?",
+    answer:
+      "Absolutely. Our women-only sections operate with independent biometric fingerprint gates and female-only staff from reception to studio floor, ensuring 100% privacy and security.",
+  },
 ];
