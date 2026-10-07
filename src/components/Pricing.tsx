@@ -9,27 +9,31 @@ type BillingCycle = "monthly" | "quarterly" | "annual";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
+  const [isStudentDiscount, setIsStudentDiscount] = useState<boolean>(false);
   const [showComparison, setShowComparison] = useState(false);
   const [ref, isVisible] = useScrollReveal<HTMLElement>({ threshold: 0.05 });
 
   const getPriceDisplay = (tier: (typeof pricingTiers)[0]) => {
+    const multiplier = isStudentDiscount ? 0.85 : 1;
     if (billingCycle === "monthly") {
       return {
-        amount: tier.monthlyPrice,
-        sub: "per month",
+        amount: Math.round(tier.monthlyPrice * multiplier),
+        sub: isStudentDiscount ? "per month (15% Student Discount applied)" : "per month",
         total: null,
       };
     } else if (billingCycle === "quarterly") {
+      const qPrice = Math.round(tier.quarterlyPrice * multiplier);
       return {
-        amount: Math.round(tier.quarterlyPrice / 3),
+        amount: Math.round(qPrice / 3),
         sub: "per month (billed quarterly)",
-        total: `${formatPKR(tier.quarterlyPrice)} /quarter (Save 10%)`,
+        total: `${formatPKR(qPrice)} /quarter (${isStudentDiscount ? "Save 10% + 15%" : "Save 10%"})`,
       };
     } else {
+      const aPrice = Math.round(tier.annualPrice * multiplier);
       return {
-        amount: Math.round(tier.annualPrice / 12),
+        amount: Math.round(aPrice / 12),
         sub: "per month (billed annually)",
-        total: `${formatPKR(tier.annualPrice)} /year (Save 25%)`,
+        total: `${formatPKR(aPrice)} /year (${isStudentDiscount ? "Save 25% + 15%" : "Save 25%"})`,
       };
     }
   };
@@ -120,6 +124,25 @@ export default function Pricing() {
               <span>Annual</span>
               <span className="text-[10px] bg-white text-brand-red px-1.5 py-0.5 rounded font-black">
                 -25%
+              </span>
+          </div>
+
+          {/* Student & Armed Forces verification toggle */}
+          <div className="mt-4 flex items-center justify-center">
+            <button
+              type="button"
+              onClick={() => setIsStudentDiscount(!isStudentDiscount)}
+              className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold transition-all border ${
+                isStudentDiscount
+                  ? "bg-emerald-500 text-white border-emerald-600 shadow-md shadow-emerald-500/20 scale-105"
+                  : "bg-white text-neutral-600 border-neutral-300 hover:border-neutral-400"
+              }`}
+            >
+              <span>🎓 Student / Corporate / Military ID?</span>
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase ${
+                isStudentDiscount ? "bg-white text-emerald-700" : "bg-neutral-200 text-neutral-700"
+              }`}>
+                {isStudentDiscount ? "✓ 15% OFF Active" : "Click to Apply -15%"}
               </span>
             </button>
           </div>
