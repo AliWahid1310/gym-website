@@ -188,6 +188,33 @@ const TOOLKIT_ITEMS: QuickToolItem[] = [
     description: "Respectful lifter guidelines and interactive 5-question etiquette quiz.",
     targetId: "gym-etiquette",
   },
+  {
+    id: "wilks-calc",
+    name: "Wilks & DOTS Powerlifting Calculator",
+    category: "Calculators",
+    icon: "🥇",
+    description: "IPF standard pound-for-pound strength score and lifter master tier classification.",
+    targetId: "wilks-calculator",
+    badge: "IPF Normalized",
+  },
+  {
+    id: "breathing-pacer",
+    name: "Athletic Breathwork & HRV Pacer",
+    category: "Workouts",
+    icon: "🌬️",
+    description: "Box breathing and 4-7-8 vagus nerve parasympathetic reset with Web Audio cues.",
+    targetId: "breathing-pacer",
+    badge: "Recovery",
+  },
+  {
+    id: "gym-bag",
+    name: "Gym Bag Gear & Readiness Audit",
+    category: "Community",
+    icon: "🎒",
+    description: "Mandatory lifting gear, hydration, towel, and digital QR check-in readiness score.",
+    targetId: "gym-bag-checklist",
+    badge: "Session Prep",
+  },
 ];
 
 export default function GymToolkitModal() {
