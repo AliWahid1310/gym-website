@@ -27,6 +27,7 @@ import WorkoutLogger from "@/components/WorkoutLogger";
 import BmiCalculator from "@/components/BmiCalculator";
 import MacroCalculator from "@/components/MacroCalculator";
 import OneRepMaxCalculator from "@/components/OneRepMaxCalculator";
+import WilksCalculator from "@/components/WilksCalculator";
 import ProgressiveOverloadCalculator from "@/components/ProgressiveOverloadCalculator";
 import StrengthStandards from "@/components/StrengthStandards";
 import CalorieBurnCalculator from "@/components/CalorieBurnCalculator";
@@ -143,6 +144,7 @@ export default function Home() {
         <BmiCalculator />
         <MacroCalculator />
         <OneRepMaxCalculator />
+        <WilksCalculator />
         <BarbellPlateCalculator />
         <ProgressiveOverloadCalculator />
         <WorkoutLogger />
