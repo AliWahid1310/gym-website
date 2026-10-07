@@ -34,6 +34,7 @@ import CalorieBurnCalculator from "@/components/CalorieBurnCalculator";
 import HydrationCalculator from "@/components/HydrationCalculator";
 import BodyFatCalculator from "@/components/BodyFatCalculator";
 import RecoveryTracker from "@/components/RecoveryTracker";
+import BreathingPacer from "@/components/BreathingPacer";
 import FitnessGoalTimeline from "@/components/FitnessGoalTimeline";
 import ChallengesSection from "@/components/ChallengesSection";
 import GymEtiquetteGuide from "@/components/GymEtiquetteGuide";
@@ -153,6 +154,7 @@ export default function Home() {
         <HydrationCalculator />
         <BodyFatCalculator />
         <RecoveryTracker />
+        <BreathingPacer />
         <FitnessGoalTimeline />
 
         {/* Monthly Member Challenges & Badges */}
