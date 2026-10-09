@@ -124,6 +124,12 @@ power-fitness-zone/
 
 ## 📅 Changelog & Interactive Suite Updates
 
+- **October 9, 2026**:
+  - **Strength Tech**: Added IPF micro-plates (0.25kg - 1.25kg) to `BarbellPlateCalculator`.
+  - **Body Composition**: Implemented US Navy circumference method with visceral risk score in `BodyFatCalculator`.
+  - **Periodization**: Added double-progression rep ceiling algorithm to `ProgressiveOverloadCalculator`.
+  - **Member Pass**: Upgraded `MemberPassWallet` with holographic NFC card simulation.
+
 - **October 1, 2026**:
   - **Seasonal Scheduling**: Released Ramadan midnight training protocol (10:30 PM - 3:30 AM).
   - **Data Privacy**: Added encrypted offline session backup to `WorkoutLogger`.
