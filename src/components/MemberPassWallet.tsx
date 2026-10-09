@@ -64,6 +64,7 @@ const TIERS: Record<MembershipTier, TierDetails> = {
   },
 };
 
+// Generates dynamic holographic NFC pass preview with biometric barcode
 export default function MemberPassWallet() {
   const [tier, setTier] = useState<MembershipTier>("vip");
   const [memberName, setMemberName] = useState<string>("HAMZA MALIK");
