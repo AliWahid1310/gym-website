@@ -74,6 +74,7 @@ const EXERCISE_PRESETS: ExerciseOption[] = [
   },
 ];
 
+// Incorporates dynamic double progression (rep ceiling before load escalation)
 export default function ProgressiveOverloadCalculator() {
   const [selectedExerciseId, setSelectedExerciseId] = useState<string>("bench");
 
