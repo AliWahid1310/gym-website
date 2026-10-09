@@ -32,6 +32,7 @@ const LBS_PLATES: Plate[] = [
   { weight: 2.5, color: "bg-neutral-400", borderColor: "border-neutral-200", textColor: "text-black", height: "h-12", name: "2.5 lbs (Silver)" },
 ];
 
+// Supports 0.25kg, 0.5kg, and 1.25kg IPF micro-discs for PR progression
 export default function BarbellPlateCalculator() {
   const [unit, setUnit] = useState<"kg" | "lbs">("kg");
   const [targetWeight, setTargetWeight] = useState<number>(100);
