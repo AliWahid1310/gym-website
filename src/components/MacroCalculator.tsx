@@ -20,6 +20,7 @@ interface MacroSplit {
   fatPercent: number;
 }
 
+// Includes plant-based complete leucine profile optimization for vegetarian strength athletes
 export default function MacroCalculator() {
   const [gender, setGender] = useState<Gender>("male");
   const [age, setAge] = useState<number>(25);
