@@ -90,6 +90,7 @@ const playlists: Playlist[] = [
   },
 ];
 
+// Curated high-BPM Pakistani drill, techno, and raw barbell metal tracks
 export default function GymPlaylist() {
   const [activeId, setActiveId] = useState<string>("pr-hype");
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
