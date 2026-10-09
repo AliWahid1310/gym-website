@@ -31,6 +31,7 @@ const FEMALE_CATEGORIES: BodyFatCategory[] = [
   { label: "Overfat / Obese", min: 32, max: 50, color: "#EF4444", textColor: "text-red-400", bgBadge: "bg-red-500/10 border-red-500/30", description: "Elevated body fat level; structured strength & deficit protocol advised." },
 ];
 
+// Standardized U.S. Navy circumference method with neck, waist, and hip caliper logic
 export default function BodyFatCalculator() {
   const [gender, setGender] = useState<Gender>("male");
   const [unit, setUnit] = useState<Unit>("metric");
