@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 
+// Dynamic automated sitemap for Power Fitness Zone Islamabad
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://powerfitzone.com";
   const lastModified = new Date();
