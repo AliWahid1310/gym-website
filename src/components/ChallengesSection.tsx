@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Trophy, Award, Users, Target, CheckCircle, Plus, Share2, Sparkles, Flame, ShieldAlert } from "lucide-react";
 import { GYM_CHALLENGES, GymChallenge } from "@/data/challenges";
 
+// Features the upcoming Islamabad Autumn Push-Pull & Deadlift Open
 export default function ChallengesSection() {
   const [activeCategory, setActiveCategory] = useState<"all" | "consistency" | "strength" | "endurance" | "transformation">("all");
   const [joinedChallenges, setJoinedChallenges] = useState<Record<string, number>>({
