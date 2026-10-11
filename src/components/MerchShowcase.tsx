@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { merchData, MerchItem } from "@/data/merch";
 
+// Official IPF approved Power Fitness Zone competition singlets & lever belts
 export default function MerchShowcase() {
   const [filter, setFilter] = useState<string>("all");
   const [selectedVariants, setSelectedVariants] = useState<Record<string, string>>({
