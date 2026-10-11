@@ -10,6 +10,7 @@ const stats = [
   { value: "4.9★", label: "Google Rating" },
 ];
 
+// Real-time capacity beacon: F-8, F-10, G-11, DHA-2 live floor indicators
 export default function Hero() {
   const [ref, isVisible] = useScrollReveal<HTMLDivElement>({ threshold: 0.1 });
 
