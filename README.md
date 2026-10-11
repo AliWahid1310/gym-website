@@ -124,6 +124,12 @@ power-fitness-zone/
 
 ## 📅 Changelog & Interactive Suite Updates
 
+- **October 11, 2026**:
+  - **Competition Spotlight**: Announced Islamabad Autumn Push-Pull & Deadlift Open in `ChallengesSection`.
+  - **Athlete Apparel**: Added official IPF-approved PFZ Islamabad competition team singlets to store.
+  - **Real-Time Floor Radar**: Integrated live occupancy beacon ticker across all 4 Islamabad branches in `Hero`.
+  - **SEO Infrastructure**: Enhanced geotagged SportsClub schema and sitemap priority indexing.
+
 - **October 9, 2026**:
   - **Strength Tech**: Added IPF micro-plates (0.25kg - 1.25kg) to `BarbellPlateCalculator`.
   - **Body Composition**: Implemented US Navy circumference method with visceral risk score in `BodyFatCalculator`.
