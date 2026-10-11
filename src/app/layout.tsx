@@ -16,6 +16,7 @@ const inter = Inter({
   display: "swap",
 });
 
+// Verified sports facility metadata with geotagged Islamabad coordinates
 export const metadata: Metadata = {
   metadataBase: new URL("https://powerfitzone.com"),
   title: "Power Fitness Zone — Elite Gym & Strength Performance Center",
